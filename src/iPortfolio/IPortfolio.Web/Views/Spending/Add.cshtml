@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Spending Add";
+}
+
+<ol class="breadcrumb mtFixed">
+    <li><a href="~/">Home</a></li>
+    <li><a href="@Url.Action("Index","Spending")">Spending</a></li>
+    <li class="active">Spending Add</li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-modal-window"></span>
+            <span>Add Spending</span>
+        </div>
+        <div class="panel-body">
+            <form id="form1">
+				<div class="form-group">
+					<label>TaskID</label>
+					<input type="text" class="form-control" name="TaskID" placeholder="Please input TaskID">
+				</div>
+				<div class="form-group">
+					<label>Title</label>
+					<input type="text" class="form-control" name="Title" placeholder="Please input Title">
+				</div>
+				<div class="form-group">
+					<label>RecordDate</label>
+					<input type="text" class="form-control" name="RecordDate" placeholder="Please input RecordDate">
+				</div>
+				<div class="form-group">
+					<label>SpendHour</label>
+					<input type="text" class="form-control" name="SpendHour" placeholder="Please input SpendHour">
+				</div>
+				<div class="form-group">
+					<label>CreatedBy</label>
+					<input type="text" class="form-control" name="CreatedBy" placeholder="Please input CreatedBy">
+				</div>
+				<div class="form-group">
+					<label>CreateTime</label>
+					<input type="text" class="form-control" name="CreateTime" placeholder="Please input CreateTime">
+				</div>
+
+				<a href="@Url.Action("Add", "Spending")" class="btn btn-default">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    <span>Refresh</span>
+                </a>
+                <button type="button" class="btn btn-primary" onclick="SubmitFormAsync('@Url.Action("Insert", "Spending")', 'form1')">Submit</button>
+                <a href="@Url.Action("Index", "Spending")" class="btn btn-default">
+                    <span class="glyphicon glyphicon-share"></span>
+                    <span>Back</span>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

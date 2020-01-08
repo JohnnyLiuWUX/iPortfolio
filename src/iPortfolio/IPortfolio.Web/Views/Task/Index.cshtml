@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Task";
+	List<IPortfolio.Model.TaskModel> modelList = (List<IPortfolio.Model.TaskModel>)ViewBag.TaskList;
+}
+
+<ol class="breadcrumb mtFixed">
+    <li><a href="~/">Home</a></li>
+    <li><a href="@Url.Action("Index","Task")">Task</a></li>
+    <li class="active">Task List</li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="pull-left">
+                <span class="glyphicon glyphicon-list"></span>
+                <span>Task List</span>
+            </div>
+            
+            <div class="pull-right">
+                <a href="@Url.Action("Index", "Task")" class="btn btn-sm btn-default">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    <span>Refresh</span>
+                </a>
+                <a href="@Url.Action("Add", "Task")" class="btn btn-sm btn-success">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span>Add</span>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="panel-body" style="overflow-y: scroll;">
+            <table id="table1" class="table table-striped">
+                <thead>
+					<tr>
+						<th>#</th>
+						<th>ParentID</th>
+						<th>ProjectID</th>
+						<th>PhaseID</th>
+						<th>TaskName</th>
+						<th>Desription</th>
+						<th>Assignee</th>
+						<th>Priority</th>
+						<th>EstimatedTime</th>
+						<th>StartDate</th>
+						<th>DueDate</th>
+						<th>Tag</th>
+						<th>Status</th>
+						<th>DonePercent</th>
+						<th>CloseDate</th>
+						<th>AssignBy</th>
+						<th>CreatedTime</th>
+						<th>...</th>
+					</tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in modelList)
+                    {
+                    <tr>
+						<td>@item.TaskID</td>
+						<td>@item.ParentID</td>
+						<td>@item.ProjectID</td>
+						<td>@item.PhaseID</td>
+						<td>@item.TaskName</td>
+						<td>@item.Desription</td>
+						<td>@item.Assignee</td>
+						<td>@item.Priority</td>
+						<td>@item.EstimatedTime</td>
+						<td>@item.StartDate</td>
+						<td>@item.DueDate</td>
+						<td>@item.Tag</td>
+						<td>@item.Status</td>
+						<td>@item.DonePercent</td>
+						<td>@item.CloseDate</td>
+						<td>@item.AssignBy</td>
+						<td>@item.CreatedTime</td>
+
+                        <td>
+                            <a href="@Url.Action("Modify","Task", new { taskID = @item.TaskID })" class="text-warning" title="Modify">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>&nbsp;
+                            <a href="javascript:void(0)" onclick="DeleteConfirmYes('@Url.Action("Delete","Task", new { taskID = @item.TaskID })')" class="text-danger" title="Delete">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+<!-- DataTables -->
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#table1').DataTable();
+    });
+</script>
+
+}

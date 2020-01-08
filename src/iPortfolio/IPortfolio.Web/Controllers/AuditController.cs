@@ -1,5 +1,5 @@
 ﻿/**
- * Auto Create By Code Magic 2020-01-07 02:48:21
+ * Auto Create By Code Magic 2020-01-08 12:44:48
  *
  * Code Magic GitHub https://github.com/old-bruce/CodeMagic
  */
@@ -39,7 +39,7 @@ namespace IPortfolio.Web.Controllers
         }
 
 		[HttpPost]
-        public JsonResult AddSubmit(AuditViewModel model)
+        public JsonResult Insert(AuditViewModel model)
 		{
 			try
             {
@@ -59,14 +59,14 @@ namespace IPortfolio.Web.Controllers
             }
 		}
 
-        public ActionResult Modify(int AuditID)
+        public ActionResult Modify(int auditID)
         {
-            ViewBag.AuditModel = auditBll.GetModel(AuditID);
+            ViewBag.AuditModel = auditBll.GetModel(auditID);
             return View();
         }
 
 		[HttpPost]
-        public JsonResult ModifySubmit(AuditViewModel model)
+        public JsonResult Update(AuditViewModel model)
 		{
 			try
             {
@@ -77,7 +77,7 @@ namespace IPortfolio.Web.Controllers
 				auditModel.Auditor = model.Auditor;
 				auditModel.CreatedTime = model.CreatedTime;
 
-				auditBll.Insert(auditModel);
+				auditBll.Update(auditModel);
                 return Json(new { code = 200 });
             }
             catch (Exception ex)
@@ -87,14 +87,14 @@ namespace IPortfolio.Web.Controllers
 		}
 
         [HttpPost]
-        public JsonResult Delete(int AuditID)
+        public JsonResult Delete(int auditID)
         {
 			try
             {
-				AuditModel model = auditBll.GetModel(AuditID);
+				AuditModel model = auditBll.GetModel(auditID);
 				if (model != null)
 				{
-					auditBll.Delete(AuditID);
+					auditBll.Delete(auditID);
 				}
 				else
 				{

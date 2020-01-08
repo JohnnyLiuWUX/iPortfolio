@@ -1,5 +1,5 @@
 ﻿/**
- * Auto Create By Code Magic 2020-01-07 02:48:26
+ * Auto Create By Code Magic 2020-01-08 12:44:53
  *
  * Code Magic GitHub https://github.com/old-bruce/CodeMagic
  */
@@ -35,7 +35,7 @@ namespace IPortfolio.Web.Controllers
         }
 
 		[HttpPost]
-        public JsonResult AddSubmit(OrgUserViewModel model)
+        public JsonResult Insert(OrgUserViewModel model)
 		{
 			try
             {
@@ -52,14 +52,14 @@ namespace IPortfolio.Web.Controllers
             }
 		}
 
-        public ActionResult Modify(string UserID, int OrgID)
+        public ActionResult Modify(string userID, int orgID)
         {
-            ViewBag.OrgUserModel = orgUserBll.GetModel(UserID, OrgID);
+            ViewBag.OrgUserModel = orgUserBll.GetModel(userID, orgID);
             return View();
         }
 
 		[HttpPost]
-        public JsonResult ModifySubmit(OrgUserViewModel model)
+        public JsonResult Update(OrgUserViewModel model)
 		{
 			try
             {
@@ -67,7 +67,7 @@ namespace IPortfolio.Web.Controllers
 				orgUserModel.UserID = model.UserID;
 				orgUserModel.OrgID = model.OrgID;
 
-				orgUserBll.Insert(orgUserModel);
+				orgUserBll.Update(orgUserModel);
                 return Json(new { code = 200 });
             }
             catch (Exception ex)
@@ -77,14 +77,14 @@ namespace IPortfolio.Web.Controllers
 		}
 
         [HttpPost]
-        public JsonResult Delete(string UserID, int OrgID)
+        public JsonResult Delete(string userID, int orgID)
         {
 			try
             {
-				OrgUserModel model = orgUserBll.GetModel(UserID, OrgID);
+				OrgUserModel model = orgUserBll.GetModel(userID, orgID);
 				if (model != null)
 				{
-					orgUserBll.Delete(UserID, OrgID);
+					orgUserBll.Delete(userID, orgID);
 				}
 				else
 				{

@@ -1,5 +1,5 @@
 ﻿/**
- * Auto Create By Code Magic 2020-01-07 02:48:27
+ * Auto Create By Code Magic 2020-01-08 12:44:54
  *
  * Code Magic GitHub https://github.com/old-bruce/CodeMagic
  */
@@ -37,7 +37,7 @@ namespace IPortfolio.Web.Controllers
         }
 
 		[HttpPost]
-        public JsonResult AddSubmit(ProjectPropertyViewModel model)
+        public JsonResult Insert(ProjectPropertyViewModel model)
 		{
 			try
             {
@@ -55,14 +55,14 @@ namespace IPortfolio.Web.Controllers
             }
 		}
 
-        public ActionResult Modify(int PropertyID)
+        public ActionResult Modify(int propertyID)
         {
-            ViewBag.ProjectPropertyModel = projectPropertyBll.GetModel(PropertyID);
+            ViewBag.ProjectPropertyModel = projectPropertyBll.GetModel(propertyID);
             return View();
         }
 
 		[HttpPost]
-        public JsonResult ModifySubmit(ProjectPropertyViewModel model)
+        public JsonResult Update(ProjectPropertyViewModel model)
 		{
 			try
             {
@@ -71,7 +71,7 @@ namespace IPortfolio.Web.Controllers
 				projectPropertyModel.PropertyKey = model.PropertyKey;
 				projectPropertyModel.PropertyValue = model.PropertyValue;
 
-				projectPropertyBll.Insert(projectPropertyModel);
+				projectPropertyBll.Update(projectPropertyModel);
                 return Json(new { code = 200 });
             }
             catch (Exception ex)
@@ -81,14 +81,14 @@ namespace IPortfolio.Web.Controllers
 		}
 
         [HttpPost]
-        public JsonResult Delete(int PropertyID)
+        public JsonResult Delete(int propertyID)
         {
 			try
             {
-				ProjectPropertyModel model = projectPropertyBll.GetModel(PropertyID);
+				ProjectPropertyModel model = projectPropertyBll.GetModel(propertyID);
 				if (model != null)
 				{
-					projectPropertyBll.Delete(PropertyID);
+					projectPropertyBll.Delete(propertyID);
 				}
 				else
 				{

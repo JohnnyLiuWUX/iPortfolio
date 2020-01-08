@@ -1,5 +1,5 @@
 ﻿/**
- * Auto Create By Code Magic 2020-01-07 02:48:25
+ * Auto Create By Code Magic 2020-01-08 12:44:52
  *
  * Code Magic GitHub https://github.com/old-bruce/CodeMagic
  */
@@ -35,7 +35,7 @@ namespace IPortfolio.Web.Controllers
         }
 
 		[HttpPost]
-        public JsonResult AddSubmit(OrganizationViewModel model)
+        public JsonResult Insert(OrganizationViewModel model)
 		{
 			try
             {
@@ -51,21 +51,21 @@ namespace IPortfolio.Web.Controllers
             }
 		}
 
-        public ActionResult Modify(int OrgID)
+        public ActionResult Modify(int orgID)
         {
-            ViewBag.OrganizationModel = organizationBll.GetModel(OrgID);
+            ViewBag.OrganizationModel = organizationBll.GetModel(orgID);
             return View();
         }
 
 		[HttpPost]
-        public JsonResult ModifySubmit(OrganizationViewModel model)
+        public JsonResult Update(OrganizationViewModel model)
 		{
 			try
             {
 				OrganizationModel organizationModel = organizationBll.GetModel(model.OrgID);
 				organizationModel.Organization = model.Organization;
 
-				organizationBll.Insert(organizationModel);
+				organizationBll.Update(organizationModel);
                 return Json(new { code = 200 });
             }
             catch (Exception ex)
@@ -75,14 +75,14 @@ namespace IPortfolio.Web.Controllers
 		}
 
         [HttpPost]
-        public JsonResult Delete(int OrgID)
+        public JsonResult Delete(int orgID)
         {
 			try
             {
-				OrganizationModel model = organizationBll.GetModel(OrgID);
+				OrganizationModel model = organizationBll.GetModel(orgID);
 				if (model != null)
 				{
-					organizationBll.Delete(OrgID);
+					organizationBll.Delete(orgID);
 				}
 				else
 				{

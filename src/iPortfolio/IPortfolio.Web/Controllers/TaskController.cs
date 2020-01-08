@@ -1,5 +1,5 @@
 ﻿/**
- * Auto Create By Code Magic 2020-01-07 02:48:30
+ * Auto Create By Code Magic 2020-01-08 12:44:57
  *
  * Code Magic GitHub https://github.com/old-bruce/CodeMagic
  */
@@ -50,7 +50,7 @@ namespace IPortfolio.Web.Controllers
         }
 
 		[HttpPost]
-        public JsonResult AddSubmit(TaskViewModel model)
+        public JsonResult Insert(TaskViewModel model)
 		{
 			try
             {
@@ -81,14 +81,14 @@ namespace IPortfolio.Web.Controllers
             }
 		}
 
-        public ActionResult Modify(int TaskID)
+        public ActionResult Modify(int taskID)
         {
-            ViewBag.TaskModel = taskBll.GetModel(TaskID);
+            ViewBag.TaskModel = taskBll.GetModel(taskID);
             return View();
         }
 
 		[HttpPost]
-        public JsonResult ModifySubmit(TaskViewModel model)
+        public JsonResult Update(TaskViewModel model)
 		{
 			try
             {
@@ -110,7 +110,7 @@ namespace IPortfolio.Web.Controllers
 				taskModel.AssignBy = model.AssignBy;
 				taskModel.CreatedTime = model.CreatedTime;
 
-				taskBll.Insert(taskModel);
+				taskBll.Update(taskModel);
                 return Json(new { code = 200 });
             }
             catch (Exception ex)
@@ -120,14 +120,14 @@ namespace IPortfolio.Web.Controllers
 		}
 
         [HttpPost]
-        public JsonResult Delete(int TaskID)
+        public JsonResult Delete(int taskID)
         {
 			try
             {
-				TaskModel model = taskBll.GetModel(TaskID);
+				TaskModel model = taskBll.GetModel(taskID);
 				if (model != null)
 				{
-					taskBll.Delete(TaskID);
+					taskBll.Delete(taskID);
 				}
 				else
 				{

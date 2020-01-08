@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Modify Spending";
+
+    IPortfolio.Model.SpendingModel item = ViewBag.SpendingModel;
+}
+
+<ol class="breadcrumb mtFixed">
+    <li><a href="~/">Home</a></li>
+    <li><a href="@Url.Action("Index","Spending")">Spending</a></li>
+    <li class="active">Modify Spending</li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-modal-window"></span>
+            <span>Modify Spending</span>
+        </div>
+        <div class="panel-body">
+            <form id="form1">
+				<input type="hidden" name="SpendID" value="@item.SpendID">
+
+				<div class="form-group">
+					<label>TaskID</label>
+					<input type="text" class="form-control" name="TaskID" placeholder="Please input TaskID" value="@item.TaskID">
+				</div>
+				<div class="form-group">
+					<label>Title</label>
+					<input type="text" class="form-control" name="Title" placeholder="Please input Title" value="@item.Title">
+				</div>
+				<div class="form-group">
+					<label>RecordDate</label>
+					<input type="text" class="form-control" name="RecordDate" placeholder="Please input RecordDate" value="@item.RecordDate">
+				</div>
+				<div class="form-group">
+					<label>SpendHour</label>
+					<input type="text" class="form-control" name="SpendHour" placeholder="Please input SpendHour" value="@item.SpendHour">
+				</div>
+				<div class="form-group">
+					<label>CreatedBy</label>
+					<input type="text" class="form-control" name="CreatedBy" placeholder="Please input CreatedBy" value="@item.CreatedBy">
+				</div>
+				<div class="form-group">
+					<label>CreateTime</label>
+					<input type="text" class="form-control" name="CreateTime" placeholder="Please input CreateTime" value="@item.CreateTime">
+				</div>
+
+				<a href="@Url.Action("Modify", "Spending", new { spendID = @item.SpendID })" class="btn btn-default">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    <span>Refresh</span>
+                </a>
+                <button type="button" class="btn btn-primary" onclick="SubmitFormAsync('@Url.Action("Update", "Spending")', 'form1')">Submit</button>
+				<a href="@Url.Action("Index", "Spending")" class="btn btn-default">
+                    <span class="glyphicon glyphicon-share"></span>
+                    <span>Back</span>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "Project";
+	List<IPortfolio.Model.ProjectModel> modelList = (List<IPortfolio.Model.ProjectModel>)ViewBag.ProjectList;
+}
+
+<ol class="breadcrumb mtFixed">
+    <li><a href="~/">Home</a></li>
+    <li><a href="@Url.Action("Index","Project")">Project</a></li>
+    <li class="active">Project List</li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="pull-left">
+                <span class="glyphicon glyphicon-list"></span>
+                <span>Project List</span>
+            </div>
+            
+            <div class="pull-right">
+                <a href="@Url.Action("Index", "Project")" class="btn btn-sm btn-default">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    <span>Refresh</span>
+                </a>
+                <a href="@Url.Action("Add", "Project")" class="btn btn-sm btn-success">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span>Add</span>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="panel-body" style="overflow-y: scroll;">
+            <table id="table1" class="table table-striped">
+                <thead>
+					<tr>
+						<th>#</th>
+						<th>OrgID</th>
+						<th>ProjectName</th>
+						<th>Tag</th>
+						<th>Description</th>
+						<th>CostCenter</th>
+						<th>StartDate</th>
+						<th>PlanGoLiveDate</th>
+						<th>DueDate</th>
+						<th>CreatedBy</th>
+						<th>CreateTime</th>
+						<th>Department</th>
+						<th>FunctionGroup</th>
+						<th>Workcell</th>
+						<th>PM</th>
+						<th>SME</th>
+						<th>Source</th>
+						<th>Quarter</th>
+						<th>Type</th>
+						<th>Scope</th>
+						<th>Sponsor</th>
+						<th>IsMajor</th>
+						<th>ARSNo</th>
+						<th>Status</th>
+						<th>Saving</th>
+						<th>EstimatedTime</th>
+						<th>InternalBudget</th>
+						<th>ExternalBudget</th>
+						<th>ROI</th>
+						<th>Phase</th>
+						<th>CloseDate</th>
+						<th>ActualTime</th>
+						<th>ActualInternalCost</th>
+						<th>ActualExternalCost</th>
+						<th>ActualSaving</th>
+						<th>...</th>
+					</tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in modelList)
+                    {
+                    <tr>
+						<td>@item.ProjectID</td>
+						<td>@item.OrgID</td>
+						<td>@item.ProjectName</td>
+						<td>@item.Tag</td>
+						<td>@item.Description</td>
+						<td>@item.CostCenter</td>
+						<td>@item.StartDate</td>
+						<td>@item.PlanGoLiveDate</td>
+						<td>@item.DueDate</td>
+						<td>@item.CreatedBy</td>
+						<td>@item.CreateTime</td>
+						<td>@item.Department</td>
+						<td>@item.FunctionGroup</td>
+						<td>@item.Workcell</td>
+						<td>@item.PM</td>
+						<td>@item.SME</td>
+						<td>@item.Source</td>
+						<td>@item.Quarter</td>
+						<td>@item.Type</td>
+						<td>@item.Scope</td>
+						<td>@item.Sponsor</td>
+						<td>@item.IsMajor</td>
+						<td>@item.ARSNo</td>
+						<td>@item.Status</td>
+						<td>@item.Saving</td>
+						<td>@item.EstimatedTime</td>
+						<td>@item.InternalBudget</td>
+						<td>@item.ExternalBudget</td>
+						<td>@item.ROI</td>
+						<td>@item.Phase</td>
+						<td>@item.CloseDate</td>
+						<td>@item.ActualTime</td>
+						<td>@item.ActualInternalCost</td>
+						<td>@item.ActualExternalCost</td>
+						<td>@item.ActualSaving</td>
+
+                        <td>
+                            <a href="@Url.Action("Modify","Project", new { projectID = @item.ProjectID })" class="text-warning" title="Modify">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>&nbsp;
+                            <a href="javascript:void(0)" onclick="DeleteConfirmYes('@Url.Action("Delete","Project", new { projectID = @item.ProjectID })')" class="text-danger" title="Delete">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+<!-- DataTables -->
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#table1').DataTable();
+    });
+</script>
+
+}

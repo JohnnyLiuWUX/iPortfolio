@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "Project Add";
+}
+
+<ol class="breadcrumb mtFixed">
+    <li><a href="~/">Home</a></li>
+    <li><a href="@Url.Action("Index","Project")">Project</a></li>
+    <li class="active">Project Add</li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-modal-window"></span>
+            <span>Add Project</span>
+        </div>
+        <div class="panel-body">
+            <form id="form1">
+				<div class="form-group">
+					<label>OrgID</label>
+					<input type="text" class="form-control" name="OrgID" placeholder="Please input OrgID">
+				</div>
+				<div class="form-group">
+					<label>ProjectName</label>
+					<input type="text" class="form-control" name="ProjectName" placeholder="Please input ProjectName">
+				</div>
+				<div class="form-group">
+					<label>Tag</label>
+					<input type="text" class="form-control" name="Tag" placeholder="Please input Tag">
+				</div>
+				<div class="form-group">
+					<label>Description</label>
+					<input type="text" class="form-control" name="Description" placeholder="Please input Description">
+				</div>
+				<div class="form-group">
+					<label>CostCenter</label>
+					<input type="text" class="form-control" name="CostCenter" placeholder="Please input CostCenter">
+				</div>
+				<div class="form-group">
+					<label>StartDate</label>
+					<input type="text" class="form-control" name="StartDate" placeholder="Please input StartDate">
+				</div>
+				<div class="form-group">
+					<label>PlanGoLiveDate</label>
+					<input type="text" class="form-control" name="PlanGoLiveDate" placeholder="Please input PlanGoLiveDate">
+				</div>
+				<div class="form-group">
+					<label>DueDate</label>
+					<input type="text" class="form-control" name="DueDate" placeholder="Please input DueDate">
+				</div>
+				<div class="form-group">
+					<label>CreatedBy</label>
+					<input type="text" class="form-control" name="CreatedBy" placeholder="Please input CreatedBy">
+				</div>
+				<div class="form-group">
+					<label>CreateTime</label>
+					<input type="text" class="form-control" name="CreateTime" placeholder="Please input CreateTime">
+				</div>
+				<div class="form-group">
+					<label>Department</label>
+					<input type="text" class="form-control" name="Department" placeholder="Please input Department">
+				</div>
+				<div class="form-group">
+					<label>FunctionGroup</label>
+					<input type="text" class="form-control" name="FunctionGroup" placeholder="Please input FunctionGroup">
+				</div>
+				<div class="form-group">
+					<label>Workcell</label>
+					<input type="text" class="form-control" name="Workcell" placeholder="Please input Workcell">
+				</div>
+				<div class="form-group">
+					<label>PM</label>
+					<input type="text" class="form-control" name="PM" placeholder="Please input PM">
+				</div>
+				<div class="form-group">
+					<label>SME</label>
+					<input type="text" class="form-control" name="SME" placeholder="Please input SME">
+				</div>
+				<div class="form-group">
+					<label>Source</label>
+					<input type="text" class="form-control" name="Source" placeholder="Please input Source">
+				</div>
+				<div class="form-group">
+					<label>Quarter</label>
+					<input type="text" class="form-control" name="Quarter" placeholder="Please input Quarter">
+				</div>
+				<div class="form-group">
+					<label>Type</label>
+					<input type="text" class="form-control" name="Type" placeholder="Please input Type">
+				</div>
+				<div class="form-group">
+					<label>Scope</label>
+					<input type="text" class="form-control" name="Scope" placeholder="Please input Scope">
+				</div>
+				<div class="form-group">
+					<label>Sponsor</label>
+					<input type="text" class="form-control" name="Sponsor" placeholder="Please input Sponsor">
+				</div>
+				<div class="form-group">
+					<label>IsMajor</label>
+					<input type="text" class="form-control" name="IsMajor" placeholder="Please input IsMajor">
+				</div>
+				<div class="form-group">
+					<label>ARSNo</label>
+					<input type="text" class="form-control" name="ARSNo" placeholder="Please input ARSNo">
+				</div>
+				<div class="form-group">
+					<label>Status</label>
+					<input type="text" class="form-control" name="Status" placeholder="Please input Status">
+				</div>
+				<div class="form-group">
+					<label>Saving</label>
+					<input type="text" class="form-control" name="Saving" placeholder="Please input Saving">
+				</div>
+				<div class="form-group">
+					<label>EstimatedTime</label>
+					<input type="text" class="form-control" name="EstimatedTime" placeholder="Please input EstimatedTime">
+				</div>
+				<div class="form-group">
+					<label>InternalBudget</label>
+					<input type="text" class="form-control" name="InternalBudget" placeholder="Please input InternalBudget">
+				</div>
+				<div class="form-group">
+					<label>ExternalBudget</label>
+					<input type="text" class="form-control" name="ExternalBudget" placeholder="Please input ExternalBudget">
+				</div>
+				<div class="form-group">
+					<label>ROI</label>
+					<input type="text" class="form-control" name="ROI" placeholder="Please input ROI">
+				</div>
+				<div class="form-group">
+					<label>Phase</label>
+					<input type="text" class="form-control" name="Phase" placeholder="Please input Phase">
+				</div>
+				<div class="form-group">
+					<label>CloseDate</label>
+					<input type="text" class="form-control" name="CloseDate" placeholder="Please input CloseDate">
+				</div>
+				<div class="form-group">
+					<label>ActualTime</label>
+					<input type="text" class="form-control" name="ActualTime" placeholder="Please input ActualTime">
+				</div>
+				<div class="form-group">
+					<label>ActualInternalCost</label>
+					<input type="text" class="form-control" name="ActualInternalCost" placeholder="Please input ActualInternalCost">
+				</div>
+				<div class="form-group">
+					<label>ActualExternalCost</label>
+					<input type="text" class="form-control" name="ActualExternalCost" placeholder="Please input ActualExternalCost">
+				</div>
+				<div class="form-group">
+					<label>ActualSaving</label>
+					<input type="text" class="form-control" name="ActualSaving" placeholder="Please input ActualSaving">
+				</div>
+
+				<a href="@Url.Action("Add", "Project")" class="btn btn-default">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    <span>Refresh</span>
+                </a>
+                <button type="button" class="btn btn-primary" onclick="SubmitFormAsync('@Url.Action("Insert", "Project")', 'form1')">Submit</button>
+                <a href="@Url.Action("Index", "Project")" class="btn btn-default">
+                    <span class="glyphicon glyphicon-share"></span>
+                    <span>Back</span>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Spending";
+	List<IPortfolio.Model.SpendingModel> modelList = (List<IPortfolio.Model.SpendingModel>)ViewBag.SpendingList;
+}
+
+<ol class="breadcrumb mtFixed">
+    <li><a href="~/">Home</a></li>
+    <li><a href="@Url.Action("Index","Spending")">Spending</a></li>
+    <li class="active">Spending List</li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="pull-left">
+                <span class="glyphicon glyphicon-list"></span>
+                <span>Spending List</span>
+            </div>
+            
+            <div class="pull-right">
+                <a href="@Url.Action("Index", "Spending")" class="btn btn-sm btn-default">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    <span>Refresh</span>
+                </a>
+                <a href="@Url.Action("Add", "Spending")" class="btn btn-sm btn-success">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span>Add</span>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="panel-body" style="overflow-y: scroll;">
+            <table id="table1" class="table table-striped">
+                <thead>
+					<tr>
+						<th>#</th>
+						<th>TaskID</th>
+						<th>Title</th>
+						<th>RecordDate</th>
+						<th>SpendHour</th>
+						<th>CreatedBy</th>
+						<th>CreateTime</th>
+						<th>...</th>
+					</tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in modelList)
+                    {
+                    <tr>
+						<td>@item.SpendID</td>
+						<td>@item.TaskID</td>
+						<td>@item.Title</td>
+						<td>@item.RecordDate</td>
+						<td>@item.SpendHour</td>
+						<td>@item.CreatedBy</td>
+						<td>@item.CreateTime</td>
+
+                        <td>
+                            <a href="@Url.Action("Modify","Spending", new { spendID = @item.SpendID })" class="text-warning" title="Modify">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>&nbsp;
+                            <a href="javascript:void(0)" onclick="DeleteConfirmYes('@Url.Action("Delete","Spending", new { spendID = @item.SpendID })')" class="text-danger" title="Delete">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+<!-- DataTables -->
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#table1').DataTable();
+    });
+</script>
+
+}

@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Modify Task";
+
+    IPortfolio.Model.TaskModel item = ViewBag.TaskModel;
+}
+
+<ol class="breadcrumb mtFixed">
+    <li><a href="~/">Home</a></li>
+    <li><a href="@Url.Action("Index","Task")">Task</a></li>
+    <li class="active">Modify Task</li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-modal-window"></span>
+            <span>Modify Task</span>
+        </div>
+        <div class="panel-body">
+            <form id="form1">
+				<input type="hidden" name="TaskID" value="@item.TaskID">
+
+				<div class="form-group">
+					<label>ParentID</label>
+					<input type="text" class="form-control" name="ParentID" placeholder="Please input ParentID" value="@item.ParentID">
+				</div>
+				<div class="form-group">
+					<label>ProjectID</label>
+					<input type="text" class="form-control" name="ProjectID" placeholder="Please input ProjectID" value="@item.ProjectID">
+				</div>
+				<div class="form-group">
+					<label>PhaseID</label>
+					<input type="text" class="form-control" name="PhaseID" placeholder="Please input PhaseID" value="@item.PhaseID">
+				</div>
+				<div class="form-group">
+					<label>TaskName</label>
+					<input type="text" class="form-control" name="TaskName" placeholder="Please input TaskName" value="@item.TaskName">
+				</div>
+				<div class="form-group">
+					<label>Desription</label>
+					<input type="text" class="form-control" name="Desription" placeholder="Please input Desription" value="@item.Desription">
+				</div>
+				<div class="form-group">
+					<label>Assignee</label>
+					<input type="text" class="form-control" name="Assignee" placeholder="Please input Assignee" value="@item.Assignee">
+				</div>
+				<div class="form-group">
+					<label>Priority</label>
+					<input type="text" class="form-control" name="Priority" placeholder="Please input Priority" value="@item.Priority">
+				</div>
+				<div class="form-group">
+					<label>EstimatedTime</label>
+					<input type="text" class="form-control" name="EstimatedTime" placeholder="Please input EstimatedTime" value="@item.EstimatedTime">
+				</div>
+				<div class="form-group">
+					<label>StartDate</label>
+					<input type="text" class="form-control" name="StartDate" placeholder="Please input StartDate" value="@item.StartDate">
+				</div>
+				<div class="form-group">
+					<label>DueDate</label>
+					<input type="text" class="form-control" name="DueDate" placeholder="Please input DueDate" value="@item.DueDate">
+				</div>
+				<div class="form-group">
+					<label>Tag</label>
+					<input type="text" class="form-control" name="Tag" placeholder="Please input Tag" value="@item.Tag">
+				</div>
+				<div class="form-group">
+					<label>Status</label>
+					<input type="text" class="form-control" name="Status" placeholder="Please input Status" value="@item.Status">
+				</div>
+				<div class="form-group">
+					<label>DonePercent</label>
+					<input type="text" class="form-control" name="DonePercent" placeholder="Please input DonePercent" value="@item.DonePercent">
+				</div>
+				<div class="form-group">
+					<label>CloseDate</label>
+					<input type="text" class="form-control" name="CloseDate" placeholder="Please input CloseDate" value="@item.CloseDate">
+				</div>
+				<div class="form-group">
+					<label>AssignBy</label>
+					<input type="text" class="form-control" name="AssignBy" placeholder="Please input AssignBy" value="@item.AssignBy">
+				</div>
+				<div class="form-group">
+					<label>CreatedTime</label>
+					<input type="text" class="form-control" name="CreatedTime" placeholder="Please input CreatedTime" value="@item.CreatedTime">
+				</div>
+
+				<a href="@Url.Action("Modify", "Task", new { taskID = @item.TaskID })" class="btn btn-default">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    <span>Refresh</span>
+                </a>
+                <button type="button" class="btn btn-primary" onclick="SubmitFormAsync('@Url.Action("Update", "Task")', 'form1')">Submit</button>
+				<a href="@Url.Action("Index", "Task")" class="btn btn-default">
+                    <span class="glyphicon glyphicon-share"></span>
+                    <span>Back</span>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

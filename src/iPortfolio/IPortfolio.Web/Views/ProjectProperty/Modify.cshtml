@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Modify ProjectProperty";
+
+    IPortfolio.Model.ProjectPropertyModel item = ViewBag.ProjectPropertyModel;
+}
+
+<ol class="breadcrumb mtFixed">
+    <li><a href="~/">Home</a></li>
+    <li><a href="@Url.Action("Index","ProjectProperty")">ProjectProperty</a></li>
+    <li class="active">Modify ProjectProperty</li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-modal-window"></span>
+            <span>Modify ProjectProperty</span>
+        </div>
+        <div class="panel-body">
+            <form id="form1">
+				<input type="hidden" name="PropertyID" value="@item.PropertyID">
+
+				<div class="form-group">
+					<label>PropertyType</label>
+					<input type="text" class="form-control" name="PropertyType" placeholder="Please input PropertyType" value="@item.PropertyType">
+				</div>
+				<div class="form-group">
+					<label>PropertyKey</label>
+					<input type="text" class="form-control" name="PropertyKey" placeholder="Please input PropertyKey" value="@item.PropertyKey">
+				</div>
+				<div class="form-group">
+					<label>PropertyValue</label>
+					<input type="text" class="form-control" name="PropertyValue" placeholder="Please input PropertyValue" value="@item.PropertyValue">
+				</div>
+
+				<a href="@Url.Action("Modify", "ProjectProperty", new { propertyID = @item.PropertyID })" class="btn btn-default">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    <span>Refresh</span>
+                </a>
+                <button type="button" class="btn btn-primary" onclick="SubmitFormAsync('@Url.Action("Update", "ProjectProperty")', 'form1')">Submit</button>
+				<a href="@Url.Action("Index", "ProjectProperty")" class="btn btn-default">
+                    <span class="glyphicon glyphicon-share"></span>
+                    <span>Back</span>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

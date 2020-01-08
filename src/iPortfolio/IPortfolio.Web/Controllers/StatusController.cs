@@ -1,5 +1,5 @@
 ﻿/**
- * Auto Create By Code Magic 2020-01-07 02:48:29
+ * Auto Create By Code Magic 2020-01-08 12:44:56
  *
  * Code Magic GitHub https://github.com/old-bruce/CodeMagic
  */
@@ -36,7 +36,7 @@ namespace IPortfolio.Web.Controllers
         }
 
 		[HttpPost]
-        public JsonResult AddSubmit(StatusViewModel model)
+        public JsonResult Insert(StatusViewModel model)
 		{
 			try
             {
@@ -54,14 +54,14 @@ namespace IPortfolio.Web.Controllers
             }
 		}
 
-        public ActionResult Modify(int Status)
+        public ActionResult Modify(int status)
         {
-            ViewBag.StatusModel = statusBll.GetModel(Status);
+            ViewBag.StatusModel = statusBll.GetModel(status);
             return View();
         }
 
 		[HttpPost]
-        public JsonResult ModifySubmit(StatusViewModel model)
+        public JsonResult Update(StatusViewModel model)
 		{
 			try
             {
@@ -70,7 +70,7 @@ namespace IPortfolio.Web.Controllers
 				statusModel.StatusGroup = model.StatusGroup;
 				statusModel.StatusDesc = model.StatusDesc;
 
-				statusBll.Insert(statusModel);
+				statusBll.Update(statusModel);
                 return Json(new { code = 200 });
             }
             catch (Exception ex)
@@ -80,14 +80,14 @@ namespace IPortfolio.Web.Controllers
 		}
 
         [HttpPost]
-        public JsonResult Delete(int Status)
+        public JsonResult Delete(int status)
         {
 			try
             {
-				StatusModel model = statusBll.GetModel(Status);
+				StatusModel model = statusBll.GetModel(status);
 				if (model != null)
 				{
-					statusBll.Delete(Status);
+					statusBll.Delete(status);
 				}
 				else
 				{

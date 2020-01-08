@@ -1,5 +1,5 @@
 ﻿/**
- * Auto Create By Code Magic 2020-01-07 02:48:28
+ * Auto Create By Code Magic 2020-01-08 12:44:55
  *
  * Code Magic GitHub https://github.com/old-bruce/CodeMagic
  */
@@ -40,7 +40,7 @@ namespace IPortfolio.Web.Controllers
         }
 
 		[HttpPost]
-        public JsonResult AddSubmit(SpendingViewModel model)
+        public JsonResult Insert(SpendingViewModel model)
 		{
 			try
             {
@@ -61,14 +61,14 @@ namespace IPortfolio.Web.Controllers
             }
 		}
 
-        public ActionResult Modify(int SpendID)
+        public ActionResult Modify(int spendID)
         {
-            ViewBag.SpendingModel = spendingBll.GetModel(SpendID);
+            ViewBag.SpendingModel = spendingBll.GetModel(spendID);
             return View();
         }
 
 		[HttpPost]
-        public JsonResult ModifySubmit(SpendingViewModel model)
+        public JsonResult Update(SpendingViewModel model)
 		{
 			try
             {
@@ -80,7 +80,7 @@ namespace IPortfolio.Web.Controllers
 				spendingModel.CreatedBy = model.CreatedBy;
 				spendingModel.CreateTime = model.CreateTime;
 
-				spendingBll.Insert(spendingModel);
+				spendingBll.Update(spendingModel);
                 return Json(new { code = 200 });
             }
             catch (Exception ex)
@@ -90,14 +90,14 @@ namespace IPortfolio.Web.Controllers
 		}
 
         [HttpPost]
-        public JsonResult Delete(int SpendID)
+        public JsonResult Delete(int spendID)
         {
 			try
             {
-				SpendingModel model = spendingBll.GetModel(SpendID);
+				SpendingModel model = spendingBll.GetModel(spendID);
 				if (model != null)
 				{
-					spendingBll.Delete(SpendID);
+					spendingBll.Delete(spendID);
 				}
 				else
 				{

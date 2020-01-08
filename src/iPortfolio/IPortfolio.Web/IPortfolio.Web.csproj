@@ -168,10 +168,11 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dataTables.bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\site.css" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -180,9 +181,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\dataTables.bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -205,6 +209,39 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\AuditItem\Add.cshtml" />
+    <Content Include="Views\AuditItem\Index.cshtml" />
+    <Content Include="Views\AuditItem\Modify.cshtml" />
+    <Content Include="Views\AuditRule\Add.cshtml" />
+    <Content Include="Views\AuditRule\Index.cshtml" />
+    <Content Include="Views\AuditRule\Modify.cshtml" />
+    <Content Include="Views\Audit\Add.cshtml" />
+    <Content Include="Views\Audit\Index.cshtml" />
+    <Content Include="Views\Audit\Modify.cshtml" />
+    <Content Include="Views\Note\Add.cshtml" />
+    <Content Include="Views\Note\Index.cshtml" />
+    <Content Include="Views\Note\Modify.cshtml" />
+    <Content Include="Views\Organization\Add.cshtml" />
+    <Content Include="Views\Organization\Index.cshtml" />
+    <Content Include="Views\Organization\Modify.cshtml" />
+    <Content Include="Views\OrgUser\Add.cshtml" />
+    <Content Include="Views\OrgUser\Index.cshtml" />
+    <Content Include="Views\OrgUser\Modify.cshtml" />
+    <Content Include="Views\ProjectProperty\Add.cshtml" />
+    <Content Include="Views\ProjectProperty\Index.cshtml" />
+    <Content Include="Views\ProjectProperty\Modify.cshtml" />
+    <Content Include="Views\Project\Add.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\Modify.cshtml" />
+    <Content Include="Views\Spending\Add.cshtml" />
+    <Content Include="Views\Spending\Index.cshtml" />
+    <Content Include="Views\Spending\Modify.cshtml" />
+    <Content Include="Views\Status\Add.cshtml" />
+    <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\Status\Modify.cshtml" />
+    <Content Include="Views\Task\Add.cshtml" />
+    <Content Include="Views\Task\Index.cshtml" />
+    <Content Include="Views\Task\Modify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

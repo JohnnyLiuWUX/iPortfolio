@@ -1,5 +1,5 @@
 ﻿/**
- * Auto Create By Code Magic 2020-01-07 02:48:23
+ * Auto Create By Code Magic 2020-01-08 12:44:50
  *
  * Code Magic GitHub https://github.com/old-bruce/CodeMagic
  */
@@ -37,7 +37,7 @@ namespace IPortfolio.Web.Controllers
         }
 
 		[HttpPost]
-        public JsonResult AddSubmit(AuditRuleViewModel model)
+        public JsonResult Insert(AuditRuleViewModel model)
 		{
 			try
             {
@@ -55,14 +55,14 @@ namespace IPortfolio.Web.Controllers
             }
 		}
 
-        public ActionResult Modify(int AuditRuleID)
+        public ActionResult Modify(int auditRuleID)
         {
-            ViewBag.AuditRuleModel = auditRuleBll.GetModel(AuditRuleID);
+            ViewBag.AuditRuleModel = auditRuleBll.GetModel(auditRuleID);
             return View();
         }
 
 		[HttpPost]
-        public JsonResult ModifySubmit(AuditRuleViewModel model)
+        public JsonResult Update(AuditRuleViewModel model)
 		{
 			try
             {
@@ -71,7 +71,7 @@ namespace IPortfolio.Web.Controllers
 				auditRuleModel.Rule = model.Rule;
 				auditRuleModel.Status = model.Status;
 
-				auditRuleBll.Insert(auditRuleModel);
+				auditRuleBll.Update(auditRuleModel);
                 return Json(new { code = 200 });
             }
             catch (Exception ex)
@@ -81,14 +81,14 @@ namespace IPortfolio.Web.Controllers
 		}
 
         [HttpPost]
-        public JsonResult Delete(int AuditRuleID)
+        public JsonResult Delete(int auditRuleID)
         {
 			try
             {
-				AuditRuleModel model = auditRuleBll.GetModel(AuditRuleID);
+				AuditRuleModel model = auditRuleBll.GetModel(auditRuleID);
 				if (model != null)
 				{
-					auditRuleBll.Delete(AuditRuleID);
+					auditRuleBll.Delete(auditRuleID);
 				}
 				else
 				{
