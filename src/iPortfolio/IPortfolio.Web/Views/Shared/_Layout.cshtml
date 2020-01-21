@@ -24,18 +24,75 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Organization", "Index", "Organization")</li>
-                    <li>@Html.ActionLink("Org User", "Index", "OrgUser")</li>
-                    <li>@Html.ActionLink("Project", "Index", "Project")</li>
-                    <li>@Html.ActionLink("Project Property", "Index", "ProjectProperty")</li>
-                    <li>@Html.ActionLink("Audit", "Index", "Audit")</li>
-                    <li>@Html.ActionLink("Audit Item", "Index", "AuditItem")</li>
-                    <li>@Html.ActionLink("Note", "Index", "Note")</li>
-                    <li>@Html.ActionLink("Spending", "Index", "Spending")</li>
-                    <li>@Html.ActionLink("Status", "Index", "Status")</li>
-                    <li>@Html.ActionLink("Task", "Index", "Task")</li>
+                    <li>@Html.ActionLink("Dashboard", "Index", "Home")</li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Project <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("New Project", "Add", "Project")</li>
+                            <li>@Html.ActionLink("My Project", "MyProject", "Project")</li>
+                        </ul>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Tasks <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("MyTasks", "MyTasks", "Task")</li>
+                            <li>@Html.ActionLink("My Assign", "MyAssign", "Task")</li>
+                        </ul>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Reports <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("All Projects", "AllProjects", "Report")</li>
+                            <li>@Html.ActionLink("All Tasks", "AllTasks", "Report")</li>
+                            <li>@Html.ActionLink("Projects Status", "ProjectsStatus", "Report")</li>
+                            <li>@Html.ActionLink("Projects Cost", "ProjectsCost", "Report")</li>
+                            <li>@Html.ActionLink("Resources", "Resources", "Report")</li>
+                        </ul>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            System <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Org User", "Index", "OrgUser")</li>
+                            <li>@Html.ActionLink("Project Property", "Index", "ProjectProperty")</li>
+                            <li>@Html.ActionLink("Audit", "Index", "Audit")</li>
+                            <li>@Html.ActionLink("Audit Item", "Index", "AuditItem")</li>
+                            <li>@Html.ActionLink("Note", "Index", "Note")</li>
+                            <li>@Html.ActionLink("Status", "Index", "Status")</li>
+                        </ul>
+                    </li>
                 </ul>
+                <!-- ./ main menu -->
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a>WUX IT</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Organization <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">WUX IT</a></li>
+                            <li><a href="#">WUH IT</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">All Organization</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LoginName <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Edit Password</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Exit</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- ./right -->
             </div>
         </div>
     </div>
