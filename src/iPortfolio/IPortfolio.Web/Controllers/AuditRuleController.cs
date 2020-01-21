@@ -1,9 +1,4 @@
-﻿/**
- * Auto Create By Code Magic 2020-01-08 12:44:50
- *
- * Code Magic GitHub https://github.com/old-bruce/CodeMagic
- */
-using IPortfolio.BLL;
+﻿using IPortfolio.BLL;
 using IPortfolio.Model;
 using System;
 using System.Collections.Generic;
@@ -15,14 +10,6 @@ namespace IPortfolio.Web.Controllers
 {
     public class AuditRuleController : Controller
     {
-		public class AuditRuleViewModel
-		{
-			public int AuditRuleID { get; set; }
-			public string Area { get; set; }
-			public string Rule { get; set; }
-			public int Status { get; set; }
-		}
-
         private readonly AuditRuleBll auditRuleBll = new AuditRuleBll();
 
         public ActionResult Index()

@@ -1,9 +1,4 @@
-﻿/**
- * Auto Create By Code Magic 2020-01-08 11:27:09
- *
- * Code Magic GitHub https://github.com/old-bruce/CodeMagic
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using IPortfolio.Model;
 using IPortfolio.DAL;
@@ -12,8 +7,6 @@ namespace IPortfolio.BLL
 {
     public partial class StatusBll
     {
-		#region Auto Create By Code Magic
-
 		private readonly StatusDal dal = new StatusDal();
 
 		public List<StatusModel> GetAll()
@@ -142,7 +135,5 @@ namespace IPortfolio.BLL
 		}
 
 
-
-		#endregion
     }
 }

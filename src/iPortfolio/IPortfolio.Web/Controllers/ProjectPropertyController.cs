@@ -1,9 +1,4 @@
-﻿/**
- * Auto Create By Code Magic 2020-01-08 12:44:54
- *
- * Code Magic GitHub https://github.com/old-bruce/CodeMagic
- */
-using IPortfolio.BLL;
+﻿using IPortfolio.BLL;
 using IPortfolio.Model;
 using System;
 using System.Collections.Generic;
@@ -15,14 +10,6 @@ namespace IPortfolio.Web.Controllers
 {
     public class ProjectPropertyController : Controller
     {
-		public class ProjectPropertyViewModel
-		{
-			public int PropertyID { get; set; }
-			public string PropertyType { get; set; }
-			public string PropertyKey { get; set; }
-			public string PropertyValue { get; set; }
-		}
-
         private readonly ProjectPropertyBll projectPropertyBll = new ProjectPropertyBll();
 
         public ActionResult Index()

@@ -1,9 +1,4 @@
-﻿/**
- * Auto Create By Code Magic 2020-01-08 12:44:55
- *
- * Code Magic GitHub https://github.com/old-bruce/CodeMagic
- */
-using IPortfolio.BLL;
+﻿using IPortfolio.BLL;
 using IPortfolio.Model;
 using System;
 using System.Collections.Generic;
@@ -15,17 +10,6 @@ namespace IPortfolio.Web.Controllers
 {
     public class SpendingController : Controller
     {
-		public class SpendingViewModel
-		{
-			public int SpendID { get; set; }
-			public int TaskID { get; set; }
-			public string Title { get; set; }
-			public string RecordDate { get; set; }
-			public int SpendHour { get; set; }
-			public string CreatedBy { get; set; }
-			public DateTime CreateTime { get; set; }
-		}
-
         private readonly SpendingBll spendingBll = new SpendingBll();
 
         public ActionResult Index()

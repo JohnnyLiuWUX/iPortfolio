@@ -1,9 +1,4 @@
-﻿/**
- * Auto Create By Code Magic 2020-01-08 11:27:08
- *
- * Code Magic GitHub https://github.com/old-bruce/CodeMagic
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,8 +10,6 @@ namespace IPortfolio.DAL
 {
     public partial class SpendingDal
     {
-		#region Auto Create By Code Magic
-
 		public List<SpendingModel> GetAll()
 		{
 			List<SpendingModel> result = new List<SpendingModel>();
@@ -515,7 +508,5 @@ namespace IPortfolio.DAL
 
 			return model;
 		}
-
-		#endregion
     }
 }

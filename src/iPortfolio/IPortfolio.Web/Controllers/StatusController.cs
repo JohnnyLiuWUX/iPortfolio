@@ -1,9 +1,4 @@
-﻿/**
- * Auto Create By Code Magic 2020-01-08 12:44:56
- *
- * Code Magic GitHub https://github.com/old-bruce/CodeMagic
- */
-using IPortfolio.BLL;
+﻿using IPortfolio.BLL;
 using IPortfolio.Model;
 using System;
 using System.Collections.Generic;
@@ -15,13 +10,6 @@ namespace IPortfolio.Web.Controllers
 {
     public class StatusController : Controller
     {
-		public class StatusViewModel
-		{
-			public int Status { get; set; }
-			public string StatusGroup { get; set; }
-			public string StatusDesc { get; set; }
-		}
-
         private readonly StatusBll statusBll = new StatusBll();
 
         public ActionResult Index()

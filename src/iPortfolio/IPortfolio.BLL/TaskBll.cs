@@ -1,9 +1,4 @@
-﻿/**
- * Auto Create By Code Magic 2020-01-08 11:27:10
- *
- * Code Magic GitHub https://github.com/old-bruce/CodeMagic
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using IPortfolio.Model;
 using IPortfolio.DAL;
@@ -12,8 +7,6 @@ namespace IPortfolio.BLL
 {
     public partial class TaskBll
     {
-		#region Auto Create By Code Magic
-
 		private readonly TaskDal dal = new TaskDal();
 
 		public List<TaskModel> GetAll()
@@ -352,7 +345,5 @@ namespace IPortfolio.BLL
 		}
 
 
-
-		#endregion
     }
 }

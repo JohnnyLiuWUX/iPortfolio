@@ -158,12 +158,25 @@
     <Compile Include="Controllers\OrgUserController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\ProjectPropertyController.cs" />
+    <Compile Include="Controllers\ProjectsStatusController.cs" />
     <Compile Include="Controllers\SpendingController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuditItemViewModel.cs" />
+    <Compile Include="Models\AuditRuleViewModel.cs" />
+    <Compile Include="Models\AuditViewModel.cs" />
+    <Compile Include="Models\NoteViewModel.cs" />
+    <Compile Include="Models\OrganizationViewModel.cs" />
+    <Compile Include="Models\OrgUserViewModel.cs" />
+    <Compile Include="Models\ProjectPropertyViewModel.cs" />
+    <Compile Include="Models\ProjectsStatusViewModel.cs" />
+    <Compile Include="Models\ProjectViewModel.cs" />
+    <Compile Include="Models\SpendingViewModel.cs" />
+    <Compile Include="Models\StatusViewModel.cs" />
+    <Compile Include="Models\TaskViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -246,7 +259,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,9 +1,4 @@
-﻿/**
- * Auto Create By Code Magic 2020-01-08 11:27:03
- *
- * Code Magic GitHub https://github.com/old-bruce/CodeMagic
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,8 +10,6 @@ namespace IPortfolio.DAL
 {
     public partial class OrganizationDal
     {
-		#region Auto Create By Code Magic
-
 		public List<OrganizationModel> GetAll()
 		{
 			List<OrganizationModel> result = new List<OrganizationModel>();
@@ -209,18 +202,20 @@ namespace IPortfolio.DAL
 
 		public int Insert(OrganizationModel model)
 		{
-			string sql = "INSERT INTO [Organization]([Organization]) VALUES(@Organization)";
+			string sql = "INSERT INTO [Organization]([OrgID],[Organization]) VALUES(@OrgID,@Organization)";
 			SqlParameter[] parameters = {
+				new SqlParameter("@OrgID", SqlDbType.Int),
 				new SqlParameter("@Organization", SqlDbType.NVarChar),
 			};
-			parameters[0].Value = model.Organization == null ? (object)DBNull.Value : model.Organization;
+			parameters[0].Value = model.OrgID;
+			parameters[1].Value = model.Organization == null ? (object)DBNull.Value : model.Organization;
 
 			return DbHelperSQL.ExecuteSql(sql, parameters);
 		}
 
 		public int Update(OrganizationModel model)
 		{
-			string sql = "UPDATE [Organization] SET [Organization]=@Organization WHERE OrgID=@OrgID";
+			string sql = "UPDATE [Organization] SET [OrgID]=@OrgID,[Organization]=@Organization WHERE OrgID=@OrgID";
 			SqlParameter[] parameters = {
 				new SqlParameter("@OrgID", SqlDbType.Int),
 				new SqlParameter("@Organization", SqlDbType.NVarChar),
@@ -280,7 +275,5 @@ namespace IPortfolio.DAL
 
 			return model;
 		}
-
-		#endregion
     }
 }

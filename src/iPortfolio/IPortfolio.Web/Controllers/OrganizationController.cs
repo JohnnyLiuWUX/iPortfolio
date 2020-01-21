@@ -1,9 +1,4 @@
-﻿/**
- * Auto Create By Code Magic 2020-01-08 12:44:52
- *
- * Code Magic GitHub https://github.com/old-bruce/CodeMagic
- */
-using IPortfolio.BLL;
+﻿using IPortfolio.BLL;
 using IPortfolio.Model;
 using System;
 using System.Collections.Generic;
@@ -15,12 +10,6 @@ namespace IPortfolio.Web.Controllers
 {
     public class OrganizationController : Controller
     {
-		public class OrganizationViewModel
-		{
-			public int OrgID { get; set; }
-			public string Organization { get; set; }
-		}
-
         private readonly OrganizationBll organizationBll = new OrganizationBll();
 
         public ActionResult Index()
@@ -40,6 +29,7 @@ namespace IPortfolio.Web.Controllers
 			try
             {
 				OrganizationModel organizationModel = new OrganizationModel();
+				organizationModel.OrgID = model.OrgID;
 				organizationModel.Organization = model.Organization;
 
 				organizationBll.Insert(organizationModel);
@@ -63,6 +53,7 @@ namespace IPortfolio.Web.Controllers
 			try
             {
 				OrganizationModel organizationModel = organizationBll.GetModel(model.OrgID);
+				organizationModel.OrgID = model.OrgID;
 				organizationModel.Organization = model.Organization;
 
 				organizationBll.Update(organizationModel);

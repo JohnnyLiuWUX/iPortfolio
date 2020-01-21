@@ -1,9 +1,4 @@
-﻿/**
- * Auto Create By Code Magic 2020-01-08 12:44:51
- *
- * Code Magic GitHub https://github.com/old-bruce/CodeMagic
- */
-using IPortfolio.BLL;
+﻿using IPortfolio.BLL;
 using IPortfolio.Model;
 using System;
 using System.Collections.Generic;
@@ -15,16 +10,6 @@ namespace IPortfolio.Web.Controllers
 {
     public class NoteController : Controller
     {
-		public class NoteViewModel
-		{
-			public int NoteID { get; set; }
-			public int ProjectID { get; set; }
-			public int TaskID { get; set; }
-			public string Note { get; set; }
-			public string CreatedBy { get; set; }
-			public DateTime CreatedTime { get; set; }
-		}
-
         private readonly NoteBll noteBll = new NoteBll();
 
         public ActionResult Index()

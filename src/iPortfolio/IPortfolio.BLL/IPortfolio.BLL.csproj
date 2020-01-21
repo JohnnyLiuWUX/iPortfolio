@@ -48,6 +48,7 @@
     <Compile Include="OrgUserBll.cs" />
     <Compile Include="ProjectBll.cs" />
     <Compile Include="ProjectPropertyBll.cs" />
+    <Compile Include="ProjectsStatusBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpendingBll.cs" />
     <Compile Include="StatusBll.cs" />

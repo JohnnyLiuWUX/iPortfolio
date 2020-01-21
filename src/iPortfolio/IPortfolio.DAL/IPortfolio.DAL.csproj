@@ -30,10 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CodeMagic.Utility">
-      <HintPath>..\libs\CodeMagic.Utility.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,11 +44,16 @@
     <Compile Include="AuditDal.cs" />
     <Compile Include="AuditItemDal.cs" />
     <Compile Include="AuditRuleDal.cs" />
+    <Compile Include="CodeMagic.Utility\CommandInfo.cs" />
+    <Compile Include="CodeMagic.Utility\DbHelperSQL.cs" />
+    <Compile Include="CodeMagic.Utility\DESEncrypt.cs" />
+    <Compile Include="CodeMagic.Utility\PubConstant.cs" />
     <Compile Include="NoteDal.cs" />
     <Compile Include="OrganizationDal.cs" />
     <Compile Include="OrgUserDal.cs" />
     <Compile Include="ProjectDal.cs" />
     <Compile Include="ProjectPropertyDal.cs" />
+    <Compile Include="ProjectsStatusDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpendingDal.cs" />
     <Compile Include="StatusDal.cs" />

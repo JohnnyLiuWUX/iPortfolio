@@ -1,9 +1,4 @@
-﻿/**
- * Auto Create By Code Magic 2020-01-08 11:27:06
- *
- * Code Magic GitHub https://github.com/old-bruce/CodeMagic
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,8 +10,6 @@ namespace IPortfolio.DAL
 {
     public partial class ProjectPropertyDal
     {
-		#region Auto Create By Code Magic
-
 		public List<ProjectPropertyModel> GetAll()
 		{
 			List<ProjectPropertyModel> result = new List<ProjectPropertyModel>();
@@ -374,7 +367,5 @@ namespace IPortfolio.DAL
 
 			return model;
 		}
-
-		#endregion
     }
 }
