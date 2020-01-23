@@ -10,9 +10,9 @@ namespace IPortfolio.Web.Controllers
 		public string Tag { get; set; }
 		public string Description { get; set; }
 		public string CostCenter { get; set; }
-		public string StartDate { get; set; }
-		public string PlanGoLiveDate { get; set; }
-		public string DueDate { get; set; }
+		public DateTime StartDate { get; set; }
+		public DateTime PlanGoLiveDate { get; set; }
+		public DateTime DueDate { get; set; }
 		public string CreatedBy { get; set; }
 		public DateTime CreateTime { get; set; }
 		public string Department { get; set; }
@@ -34,10 +34,11 @@ namespace IPortfolio.Web.Controllers
 		public decimal ExternalBudget { get; set; }
 		public decimal ROI { get; set; }
 		public string Phase { get; set; }
-		public string CloseDate { get; set; }
+		public DateTime CloseDate { get; set; }
 		public decimal ActualTime { get; set; }
 		public decimal ActualInternalCost { get; set; }
 		public decimal ActualExternalCost { get; set; }
 		public decimal ActualSaving { get; set; }
+		public int DonePercent { get; set; }
     }
 }

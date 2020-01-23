@@ -75,7 +75,7 @@ namespace IPortfolio.DAL
 			return result;
 		}
 
-		public List<AuditModel> GetListByDueDate(string dueDate)
+		public List<AuditModel> GetListByDueDate(DateTime dueDate)
 		{
 			string sql = "SELECT * FROM [Audit] WHERE [DueDate]=@DueDate";
 			SqlParameter[] parameters = {
@@ -278,7 +278,7 @@ namespace IPortfolio.DAL
 			return DataRowToModel(ds.Tables[0].Rows[0]);
 		}
 
-		public AuditModel GetModelByDueDate(string dueDate)
+		public AuditModel GetModelByDueDate(DateTime dueDate)
 		{
 			string sql = "SELECT * FROM [Audit] WHERE [DueDate]=@DueDate";
 			SqlParameter[] parameters = {
@@ -397,7 +397,7 @@ namespace IPortfolio.DAL
 			return DbHelperSQL.ExecuteSql(sql, parameters);
 		}
 
-		public int DeleteByDueDate(string dueDate)
+		public int DeleteByDueDate(DateTime dueDate)
 		{
 			string sql = "DELETE FROM [Audit] WHERE [DueDate]=@DueDate";
 			SqlParameter[] parameters = {
@@ -448,7 +448,7 @@ namespace IPortfolio.DAL
 			}
 			if (row["DueDate"] != null && row["DueDate"].ToString() != "")
 			{
-				model.DueDate = row["DueDate"].ToString();
+				model.DueDate = DateTime.Parse(row["DueDate"].ToString());
 			}
 			if (row["Auditor"] != null && row["Auditor"].ToString() != "")
 			{

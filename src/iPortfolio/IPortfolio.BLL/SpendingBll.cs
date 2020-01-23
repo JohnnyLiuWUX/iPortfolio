@@ -29,7 +29,7 @@ namespace IPortfolio.BLL
 			return dal.GetListByTitle(title);
 		}
 
-		public List<SpendingModel> GetListByRecordDate(string recordDate)
+		public List<SpendingModel> GetListByRecordDate(DateTime recordDate)
 		{
 			return dal.GetListByRecordDate(recordDate);
 		}
@@ -122,7 +122,7 @@ namespace IPortfolio.BLL
 			return dal.GetModelByTitle(title);
 		}
 
-		public SpendingModel GetModelByRecordDate(string recordDate)
+		public SpendingModel GetModelByRecordDate(DateTime recordDate)
 		{
 			return dal.GetModelByRecordDate(recordDate);
 		}
@@ -174,7 +174,7 @@ namespace IPortfolio.BLL
 			return dal.DeleteByTitle(title);
 		}
 
-		public int DeleteByRecordDate(string recordDate)
+		public int DeleteByRecordDate(DateTime recordDate)
 		{
 			return dal.DeleteByRecordDate(recordDate);
 		}

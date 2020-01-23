@@ -5,8 +5,8 @@ using IPortfolio.DAL;
 
 namespace IPortfolio.BLL
 {
-	public partial class ProjectBll
-	{
+    public partial class ProjectBll
+    {
 		private readonly ProjectDal dal = new ProjectDal();
 
 		public List<ProjectModel> GetAll()
@@ -44,17 +44,17 @@ namespace IPortfolio.BLL
 			return dal.GetListByCostCenter(costCenter);
 		}
 
-		public List<ProjectModel> GetListByStartDate(string startDate)
+		public List<ProjectModel> GetListByStartDate(DateTime startDate)
 		{
 			return dal.GetListByStartDate(startDate);
 		}
 
-		public List<ProjectModel> GetListByPlanGoLiveDate(string planGoLiveDate)
+		public List<ProjectModel> GetListByPlanGoLiveDate(DateTime planGoLiveDate)
 		{
 			return dal.GetListByPlanGoLiveDate(planGoLiveDate);
 		}
 
-		public List<ProjectModel> GetListByDueDate(string dueDate)
+		public List<ProjectModel> GetListByDueDate(DateTime dueDate)
 		{
 			return dal.GetListByDueDate(dueDate);
 		}
@@ -164,7 +164,7 @@ namespace IPortfolio.BLL
 			return dal.GetListByPhase(phase);
 		}
 
-		public List<ProjectModel> GetListByCloseDate(string closeDate)
+		public List<ProjectModel> GetListByCloseDate(DateTime closeDate)
 		{
 			return dal.GetListByCloseDate(closeDate);
 		}
@@ -197,51 +197,51 @@ namespace IPortfolio.BLL
 
 
 		/// <summary>
-		/// 根据查询条件(SQL语句)检索数据
-		/// </summary>
-		/// <param name="where">where查询条件</param>
+        /// 根据查询条件(SQL语句)检索数据
+        /// </summary>
+        /// <param name="where">where查询条件</param>
 		/// <param name="orderName">order字段名</param>
 		/// <param name="orderValue">ASC || DESC</param>
-		/// <returns></returns>
+        /// <returns></returns>
 		/// <example>
-		/// GetListByWhere("RoleID=5", "ID", "ASC");
-		/// </example>
+        /// GetListByWhere("RoleID=5", "ID", "ASC");
+        /// </example>
 		public List<ProjectModel> GetListByWhere(string where, string orderName, string orderValue = "ASC")
 		{
 			return dal.GetListByWhere(where, orderName, orderValue);
 		}
 
 		/// <summary>
-		/// 根据多查询条件(SQL AND)检索数据
-		/// </summary>
-		/// <param name="whereAnd">多查询条件</param>
+        /// 根据多查询条件(SQL AND)检索数据
+        /// </summary>
+        /// <param name="whereAnd">多查询条件</param>
 		/// <param name="orderName">order字段名</param>
 		/// <param name="orderValue">ASC || DESC</param>
-		/// <returns></returns>
+        /// <returns></returns>
 		/// <example>
 		/// List<string> whereAnd = new List<string>();
 		/// whereAnd.Add("RoleID=5");
 		/// whereAnd.Add("IsAdmin=1");
-		/// GetListByWhereAnd(whereAnd, "ID", "DESC");
-		/// </example>
+        /// GetListByWhereAnd(whereAnd, "ID", "DESC");
+        /// </example>
 		public List<ProjectModel> GetListByWhereAnd(IEnumerable<string> whereAnd, string orderName, string orderValue)
 		{
 			return dal.GetListByWhereAnd(whereAnd, orderName, orderValue);
 		}
 
 		/// <summary>
-		/// 根据多查询条件(SQL OR)检索数据
-		/// </summary>
-		/// <param name="whereAnd">多查询条件</param>
+        /// 根据多查询条件(SQL OR)检索数据
+        /// </summary>
+        /// <param name="whereAnd">多查询条件</param>
 		/// <param name="orderName">order字段名</param>
 		/// <param name="orderValue">ASC || DESC</param>
-		/// <returns></returns>
+        /// <returns></returns>
 		/// <example>
 		/// List<string> whereOR = new List<string>();
 		/// whereOR.Add("RoleID IN (1,2,3)");
 		/// whereOR.Add("IsAdmin=1");
-		/// GetListByWhereOr(whereOR, "ID", "DESC");
-		/// </example>
+        /// GetListByWhereOr(whereOR, "ID", "DESC");
+        /// </example>
 		public List<ProjectModel> GetListByWhereOr(IEnumerable<string> whereAnd, string orderName, string orderValue)
 		{
 			return dal.GetListByWhereOr(whereAnd, orderName, orderValue);
@@ -282,17 +282,17 @@ namespace IPortfolio.BLL
 			return dal.GetModelByCostCenter(costCenter);
 		}
 
-		public ProjectModel GetModelByStartDate(string startDate)
+		public ProjectModel GetModelByStartDate(DateTime startDate)
 		{
 			return dal.GetModelByStartDate(startDate);
 		}
 
-		public ProjectModel GetModelByPlanGoLiveDate(string planGoLiveDate)
+		public ProjectModel GetModelByPlanGoLiveDate(DateTime planGoLiveDate)
 		{
 			return dal.GetModelByPlanGoLiveDate(planGoLiveDate);
 		}
 
-		public ProjectModel GetModelByDueDate(string dueDate)
+		public ProjectModel GetModelByDueDate(DateTime dueDate)
 		{
 			return dal.GetModelByDueDate(dueDate);
 		}
@@ -402,7 +402,7 @@ namespace IPortfolio.BLL
 			return dal.GetModelByPhase(phase);
 		}
 
-		public ProjectModel GetModelByCloseDate(string closeDate)
+		public ProjectModel GetModelByCloseDate(DateTime closeDate)
 		{
 			return dal.GetModelByCloseDate(closeDate);
 		}
@@ -479,17 +479,17 @@ namespace IPortfolio.BLL
 			return dal.DeleteByCostCenter(costCenter);
 		}
 
-		public int DeleteByStartDate(string startDate)
+		public int DeleteByStartDate(DateTime startDate)
 		{
 			return dal.DeleteByStartDate(startDate);
 		}
 
-		public int DeleteByPlanGoLiveDate(string planGoLiveDate)
+		public int DeleteByPlanGoLiveDate(DateTime planGoLiveDate)
 		{
 			return dal.DeleteByPlanGoLiveDate(planGoLiveDate);
 		}
 
-		public int DeleteByDueDate(string dueDate)
+		public int DeleteByDueDate(DateTime dueDate)
 		{
 			return dal.DeleteByDueDate(dueDate);
 		}
@@ -599,7 +599,7 @@ namespace IPortfolio.BLL
 			return dal.DeleteByPhase(phase);
 		}
 
-		public int DeleteByCloseDate(string closeDate)
+		public int DeleteByCloseDate(DateTime closeDate)
 		{
 			return dal.DeleteByCloseDate(closeDate);
 		}
@@ -630,5 +630,5 @@ namespace IPortfolio.BLL
 		}
 
 
-	}
+    }
 }

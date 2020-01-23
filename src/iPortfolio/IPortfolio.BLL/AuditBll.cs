@@ -29,7 +29,7 @@ namespace IPortfolio.BLL
 			return dal.GetListByStatus(status);
 		}
 
-		public List<AuditModel> GetListByDueDate(string dueDate)
+		public List<AuditModel> GetListByDueDate(DateTime dueDate)
 		{
 			return dal.GetListByDueDate(dueDate);
 		}
@@ -117,7 +117,7 @@ namespace IPortfolio.BLL
 			return dal.GetModelByStatus(status);
 		}
 
-		public AuditModel GetModelByDueDate(string dueDate)
+		public AuditModel GetModelByDueDate(DateTime dueDate)
 		{
 			return dal.GetModelByDueDate(dueDate);
 		}
@@ -164,7 +164,7 @@ namespace IPortfolio.BLL
 			return dal.DeleteByStatus(status);
 		}
 
-		public int DeleteByDueDate(string dueDate)
+		public int DeleteByDueDate(DateTime dueDate)
 		{
 			return dal.DeleteByDueDate(dueDate);
 		}

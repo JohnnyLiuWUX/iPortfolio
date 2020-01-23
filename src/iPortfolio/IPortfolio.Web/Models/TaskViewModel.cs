@@ -13,12 +13,12 @@ namespace IPortfolio.Web.Controllers
 		public string Assignee { get; set; }
 		public int Priority { get; set; }
 		public decimal EstimatedTime { get; set; }
-		public string StartDate { get; set; }
-		public string DueDate { get; set; }
+		public DateTime StartDate { get; set; }
+		public DateTime DueDate { get; set; }
 		public string Tag { get; set; }
 		public int Status { get; set; }
 		public int DonePercent { get; set; }
-		public string CloseDate { get; set; }
+		public DateTime CloseDate { get; set; }
 		public string AssignBy { get; set; }
 		public DateTime CreatedTime { get; set; }
     }

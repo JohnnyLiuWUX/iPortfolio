@@ -9,11 +9,11 @@ using System.Web.Mvc;
 namespace IPortfolio.Web.Controllers
 {
     public class ProjectController : BaseController
-	{
+    {
         private readonly ProjectBll projectBll = new ProjectBll();
 		private readonly ProjectPropertyBll projectPropertyBll = new ProjectPropertyBll();
 
-        public ActionResult Index()
+		public ActionResult Index()
         {
             ViewBag.ProjectList = projectBll.GetAll();
             return View();
@@ -25,7 +25,7 @@ namespace IPortfolio.Web.Controllers
 			return View();
 		}
 
-        public ActionResult Add()
+		public ActionResult Add()
         {
 			ViewBag.ProjectPropertyList = projectPropertyBll.GetAll();
 			return View();
@@ -39,14 +39,18 @@ namespace IPortfolio.Web.Controllers
 				ProjectModel projectModel = new ProjectModel();
 				projectModel.OrgID = model.OrgID;
 				projectModel.ProjectName = model.ProjectName;
+				if (string.IsNullOrEmpty(model.ProjectName))
+				{
+					return Json(new { code = 400, msg = "ProjectName is null" });
+				}
 				projectModel.Tag = model.Tag;
 				projectModel.Description = model.Description;
 				projectModel.CostCenter = model.CostCenter;
 				projectModel.StartDate = model.StartDate;
 				projectModel.PlanGoLiveDate = model.PlanGoLiveDate;
 				projectModel.DueDate = model.DueDate;
-				projectModel.CreatedBy = model.CreatedBy;
-				projectModel.CreateTime = model.CreateTime;
+				projectModel.CreatedBy = HttpContext.User.Identity.Name;
+				projectModel.CreateTime = DateTime.Now;
 				projectModel.Department = model.Department;
 				projectModel.FunctionGroup = model.FunctionGroup;
 				projectModel.Workcell = model.Workcell;
@@ -71,6 +75,7 @@ namespace IPortfolio.Web.Controllers
 				projectModel.ActualInternalCost = model.ActualInternalCost;
 				projectModel.ActualExternalCost = model.ActualExternalCost;
 				projectModel.ActualSaving = model.ActualSaving;
+				projectModel.DonePercent = model.DonePercent;
 
 				projectBll.Insert(projectModel);
                 return Json(new { code = 200 });
@@ -84,7 +89,8 @@ namespace IPortfolio.Web.Controllers
         public ActionResult Modify(int projectID)
         {
             ViewBag.ProjectModel = projectBll.GetModel(projectID);
-            return View();
+			ViewBag.ProjectPropertyList = projectPropertyBll.GetAll();
+			return View();
         }
 
 		[HttpPost]
@@ -101,8 +107,6 @@ namespace IPortfolio.Web.Controllers
 				projectModel.StartDate = model.StartDate;
 				projectModel.PlanGoLiveDate = model.PlanGoLiveDate;
 				projectModel.DueDate = model.DueDate;
-				projectModel.CreatedBy = model.CreatedBy;
-				projectModel.CreateTime = model.CreateTime;
 				projectModel.Department = model.Department;
 				projectModel.FunctionGroup = model.FunctionGroup;
 				projectModel.Workcell = model.Workcell;
@@ -127,6 +131,7 @@ namespace IPortfolio.Web.Controllers
 				projectModel.ActualInternalCost = model.ActualInternalCost;
 				projectModel.ActualExternalCost = model.ActualExternalCost;
 				projectModel.ActualSaving = model.ActualSaving;
+				projectModel.DonePercent = model.DonePercent;
 
 				projectBll.Update(projectModel);
                 return Json(new { code = 200 });

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Project Add";
+    ViewBag.Title = "New Project";
 
 	List<IPortfolio.Model.OrganizationModel> orgList = ViewBag.OrgList;
 	List<IPortfolio.Model.ProjectPropertyModel> projectPropertyList = ViewBag.ProjectPropertyList;
@@ -7,8 +7,8 @@
 
 <ol class="breadcrumb mtFixed">
     <li><a href="~/">Home</a></li>
-    <li><a href="@Url.Action("Index","Project")">Project</a></li>
-    <li class="active">Project Add</li>
+    <li><a href="@Url.Action("MyProject","Project")">Project</a></li>
+    <li class="active">New Project</li>
 </ol>
 
 <div class="container-fluid">
@@ -120,16 +120,6 @@
 							<input type="text" class="form-control" name="SME" placeholder="Please input SME">
 						</div>
 					</div>
-
-					<div class="col-md-3">
-						<div class="form-group">
-							<label>Type</label>
-							<select class="form-control" name="Type">
-								<option>Select</option>
-							</select>
-						</div>
-					</div>
-
 					<div class="col-md-3">
 						<div class="form-group">
 							<label>Sponsor</label>
@@ -190,6 +180,24 @@
 						<div class="form-group">
 							<label>ActualSaving</label>
 							<input type="text" class="form-control" name="ActualSaving" placeholder="Please input ActualSaving">
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="form-group">
+							<label>Type</label>
+							<select class="form-control" name="Type">
+								<option value="0">== Select ==</option>
+								@if (projectPropertyList != null)
+								{
+									foreach (var item in projectPropertyList)
+									{
+										if (item.PropertyType.ToLower() == "type")
+										{
+											<option vlaue="@item.PropertyKey">@item.PropertyValue</option>
+										}
+									}
+								}
+							</select>
 						</div>
 					</div>
 					<div class="col-md-3">
@@ -269,7 +277,7 @@
 							<label>Status</label>
 							<select class="form-control" name="Status">
 								<option value="0">== Select ==</option>
-								@if (projectPropertyList != null)
+								@*@if (projectPropertyList != null)
 								{
 									foreach (var item in projectPropertyList)
 									{
@@ -278,12 +286,12 @@
 											<option vlaue="@item.PropertyKey">@item.PropertyValue</option>
 										}
 									}
-								}
+								}*@
 							</select>
 						</div>
 					</div>
 
-					<div class="col-md-3">
+					<div class="col-md-12">
 						<div class="form-group">
 							<label>Description</label>
 							<textarea class="form-control" name="Description" rows="3"></textarea>

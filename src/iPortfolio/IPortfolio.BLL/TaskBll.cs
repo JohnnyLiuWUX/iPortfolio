@@ -59,12 +59,12 @@ namespace IPortfolio.BLL
 			return dal.GetListByEstimatedTime(estimatedTime);
 		}
 
-		public List<TaskModel> GetListByStartDate(string startDate)
+		public List<TaskModel> GetListByStartDate(DateTime startDate)
 		{
 			return dal.GetListByStartDate(startDate);
 		}
 
-		public List<TaskModel> GetListByDueDate(string dueDate)
+		public List<TaskModel> GetListByDueDate(DateTime dueDate)
 		{
 			return dal.GetListByDueDate(dueDate);
 		}
@@ -84,7 +84,7 @@ namespace IPortfolio.BLL
 			return dal.GetListByDonePercent(donePercent);
 		}
 
-		public List<TaskModel> GetListByCloseDate(string closeDate)
+		public List<TaskModel> GetListByCloseDate(DateTime closeDate)
 		{
 			return dal.GetListByCloseDate(closeDate);
 		}
@@ -202,12 +202,12 @@ namespace IPortfolio.BLL
 			return dal.GetModelByEstimatedTime(estimatedTime);
 		}
 
-		public TaskModel GetModelByStartDate(string startDate)
+		public TaskModel GetModelByStartDate(DateTime startDate)
 		{
 			return dal.GetModelByStartDate(startDate);
 		}
 
-		public TaskModel GetModelByDueDate(string dueDate)
+		public TaskModel GetModelByDueDate(DateTime dueDate)
 		{
 			return dal.GetModelByDueDate(dueDate);
 		}
@@ -227,7 +227,7 @@ namespace IPortfolio.BLL
 			return dal.GetModelByDonePercent(donePercent);
 		}
 
-		public TaskModel GetModelByCloseDate(string closeDate)
+		public TaskModel GetModelByCloseDate(DateTime closeDate)
 		{
 			return dal.GetModelByCloseDate(closeDate);
 		}
@@ -304,12 +304,12 @@ namespace IPortfolio.BLL
 			return dal.DeleteByEstimatedTime(estimatedTime);
 		}
 
-		public int DeleteByStartDate(string startDate)
+		public int DeleteByStartDate(DateTime startDate)
 		{
 			return dal.DeleteByStartDate(startDate);
 		}
 
-		public int DeleteByDueDate(string dueDate)
+		public int DeleteByDueDate(DateTime dueDate)
 		{
 			return dal.DeleteByDueDate(dueDate);
 		}
@@ -329,7 +329,7 @@ namespace IPortfolio.BLL
 			return dal.DeleteByDonePercent(donePercent);
 		}
 
-		public int DeleteByCloseDate(string closeDate)
+		public int DeleteByCloseDate(DateTime closeDate)
 		{
 			return dal.DeleteByCloseDate(closeDate);
 		}

@@ -75,7 +75,7 @@ namespace IPortfolio.DAL
 			return result;
 		}
 
-		public List<SpendingModel> GetListByRecordDate(string recordDate)
+		public List<SpendingModel> GetListByRecordDate(DateTime recordDate)
 		{
 			string sql = "SELECT * FROM [Spending] WHERE [RecordDate]=@RecordDate";
 			SqlParameter[] parameters = {
@@ -295,7 +295,7 @@ namespace IPortfolio.DAL
 			return DataRowToModel(ds.Tables[0].Rows[0]);
 		}
 
-		public SpendingModel GetModelByRecordDate(string recordDate)
+		public SpendingModel GetModelByRecordDate(DateTime recordDate)
 		{
 			string sql = "SELECT * FROM [Spending] WHERE [RecordDate]=@RecordDate";
 			SqlParameter[] parameters = {
@@ -430,7 +430,7 @@ namespace IPortfolio.DAL
 			return DbHelperSQL.ExecuteSql(sql, parameters);
 		}
 
-		public int DeleteByRecordDate(string recordDate)
+		public int DeleteByRecordDate(DateTime recordDate)
 		{
 			string sql = "DELETE FROM [Spending] WHERE [RecordDate]=@RecordDate";
 			SqlParameter[] parameters = {
@@ -491,7 +491,7 @@ namespace IPortfolio.DAL
 			}
 			if (row["RecordDate"] != null && row["RecordDate"].ToString() != "")
 			{
-				model.RecordDate = row["RecordDate"].ToString();
+				model.RecordDate = DateTime.Parse(row["RecordDate"].ToString());
 			}
 			if (row["SpendHour"] != null && row["SpendHour"].ToString() != "")
 			{

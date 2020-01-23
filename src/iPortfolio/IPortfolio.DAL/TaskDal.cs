@@ -177,7 +177,7 @@ namespace IPortfolio.DAL
 			return result;
 		}
 
-		public List<TaskModel> GetListByStartDate(string startDate)
+		public List<TaskModel> GetListByStartDate(DateTime startDate)
 		{
 			string sql = "SELECT * FROM [Task] WHERE [StartDate]=@StartDate";
 			SqlParameter[] parameters = {
@@ -194,7 +194,7 @@ namespace IPortfolio.DAL
 			return result;
 		}
 
-		public List<TaskModel> GetListByDueDate(string dueDate)
+		public List<TaskModel> GetListByDueDate(DateTime dueDate)
 		{
 			string sql = "SELECT * FROM [Task] WHERE [DueDate]=@DueDate";
 			SqlParameter[] parameters = {
@@ -262,7 +262,7 @@ namespace IPortfolio.DAL
 			return result;
 		}
 
-		public List<TaskModel> GetListByCloseDate(string closeDate)
+		public List<TaskModel> GetListByCloseDate(DateTime closeDate)
 		{
 			string sql = "SELECT * FROM [Task] WHERE [CloseDate]=@CloseDate";
 			SqlParameter[] parameters = {
@@ -537,7 +537,7 @@ namespace IPortfolio.DAL
 			return DataRowToModel(ds.Tables[0].Rows[0]);
 		}
 
-		public TaskModel GetModelByStartDate(string startDate)
+		public TaskModel GetModelByStartDate(DateTime startDate)
 		{
 			string sql = "SELECT * FROM [Task] WHERE [StartDate]=@StartDate";
 			SqlParameter[] parameters = {
@@ -549,7 +549,7 @@ namespace IPortfolio.DAL
 			return DataRowToModel(ds.Tables[0].Rows[0]);
 		}
 
-		public TaskModel GetModelByDueDate(string dueDate)
+		public TaskModel GetModelByDueDate(DateTime dueDate)
 		{
 			string sql = "SELECT * FROM [Task] WHERE [DueDate]=@DueDate";
 			SqlParameter[] parameters = {
@@ -597,7 +597,7 @@ namespace IPortfolio.DAL
 			return DataRowToModel(ds.Tables[0].Rows[0]);
 		}
 
-		public TaskModel GetModelByCloseDate(string closeDate)
+		public TaskModel GetModelByCloseDate(DateTime closeDate)
 		{
 			string sql = "SELECT * FROM [Task] WHERE [CloseDate]=@CloseDate";
 			SqlParameter[] parameters = {
@@ -820,7 +820,7 @@ namespace IPortfolio.DAL
 			return DbHelperSQL.ExecuteSql(sql, parameters);
 		}
 
-		public int DeleteByStartDate(string startDate)
+		public int DeleteByStartDate(DateTime startDate)
 		{
 			string sql = "DELETE FROM [Task] WHERE [StartDate]=@StartDate";
 			SqlParameter[] parameters = {
@@ -830,7 +830,7 @@ namespace IPortfolio.DAL
 			return DbHelperSQL.ExecuteSql(sql, parameters);
 		}
 
-		public int DeleteByDueDate(string dueDate)
+		public int DeleteByDueDate(DateTime dueDate)
 		{
 			string sql = "DELETE FROM [Task] WHERE [DueDate]=@DueDate";
 			SqlParameter[] parameters = {
@@ -870,7 +870,7 @@ namespace IPortfolio.DAL
 			return DbHelperSQL.ExecuteSql(sql, parameters);
 		}
 
-		public int DeleteByCloseDate(string closeDate)
+		public int DeleteByCloseDate(DateTime closeDate)
 		{
 			string sql = "DELETE FROM [Task] WHERE [CloseDate]=@CloseDate";
 			SqlParameter[] parameters = {
@@ -945,11 +945,11 @@ namespace IPortfolio.DAL
 			}
 			if (row["StartDate"] != null && row["StartDate"].ToString() != "")
 			{
-				model.StartDate = row["StartDate"].ToString();
+				model.StartDate = DateTime.Parse(row["StartDate"].ToString());
 			}
 			if (row["DueDate"] != null && row["DueDate"].ToString() != "")
 			{
-				model.DueDate = row["DueDate"].ToString();
+				model.DueDate = DateTime.Parse(row["DueDate"].ToString());
 			}
 			if (row["Tag"] != null && row["Tag"].ToString() != "")
 			{
@@ -965,7 +965,7 @@ namespace IPortfolio.DAL
 			}
 			if (row["CloseDate"] != null && row["CloseDate"].ToString() != "")
 			{
-				model.CloseDate = row["CloseDate"].ToString();
+				model.CloseDate = DateTime.Parse(row["CloseDate"].ToString());
 			}
 			if (row["AssignBy"] != null && row["AssignBy"].ToString() != "")
 			{
