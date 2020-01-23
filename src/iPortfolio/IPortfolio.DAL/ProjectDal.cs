@@ -8,8 +8,8 @@ using IPortfolio.Model;
 
 namespace IPortfolio.DAL
 {
-    public partial class ProjectDal
-    {
+	public partial class ProjectDal
+	{
 		public List<ProjectModel> GetAll()
 		{
 			List<ProjectModel> result = new List<ProjectModel>();
@@ -34,7 +34,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -51,7 +51,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -68,7 +68,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -85,7 +85,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -102,7 +102,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -119,7 +119,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -136,7 +136,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -153,7 +153,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -170,7 +170,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -187,7 +187,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -204,7 +204,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -221,7 +221,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -238,7 +238,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -255,7 +255,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -272,7 +272,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -289,7 +289,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -306,7 +306,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -323,7 +323,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -340,7 +340,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -357,7 +357,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -374,7 +374,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -391,7 +391,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -408,7 +408,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -425,7 +425,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -442,7 +442,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -459,7 +459,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -476,7 +476,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -493,7 +493,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -510,7 +510,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -527,7 +527,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -544,7 +544,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -561,7 +561,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -578,7 +578,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -595,7 +595,7 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -612,7 +612,24 @@ namespace IPortfolio.DAL
 			DataSet ds = DbHelperSQL.Query(sql, parameters);
 			List<ProjectModel> result = new List<ProjectModel>();
 			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
-			foreach(DataRow row in ds.Tables[0].Rows)
+			foreach (DataRow row in ds.Tables[0].Rows)
+			{
+				result.Add(DataRowToModel(row));
+			}
+			return result;
+		}
+
+		public List<ProjectModel> GetListByDonePercent(int donePercent)
+		{
+			string sql = "SELECT * FROM [Project] WHERE [DonePercent]=@DonePercent";
+			SqlParameter[] parameters = {
+				new SqlParameter("@DonePercent", SqlDbType.Int),
+			};
+			parameters[0].Value = donePercent;
+			DataSet ds = DbHelperSQL.Query(sql, parameters);
+			List<ProjectModel> result = new List<ProjectModel>();
+			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
+			foreach (DataRow row in ds.Tables[0].Rows)
 			{
 				result.Add(DataRowToModel(row));
 			}
@@ -622,15 +639,15 @@ namespace IPortfolio.DAL
 
 
 		/// <summary>
-        /// 根据查询条件(SQL语句)检索数据
-        /// </summary>
-        /// <param name="where">where查询条件</param>
+		/// 根据查询条件(SQL语句)检索数据
+		/// </summary>
+		/// <param name="where">where查询条件</param>
 		/// <param name="orderName">order字段名</param>
 		/// <param name="orderValue">ASC || DESC</param>
-        /// <returns></returns>
+		/// <returns></returns>
 		/// <example>
-        /// GetListByWhere("RoleID=5", "ID", "ASC");
-        /// </example>
+		/// GetListByWhere("RoleID=5", "ID", "ASC");
+		/// </example>
 		public List<ProjectModel> GetListByWhere(string where, string orderName, string orderValue = "ASC")
 		{
 			StringBuilder sql = new StringBuilder("SELECT * FROM [Project] WHERE 1=1");
@@ -651,18 +668,18 @@ namespace IPortfolio.DAL
 		}
 
 		/// <summary>
-        /// 根据多查询条件(SQL AND)检索数据
-        /// </summary>
-        /// <param name="whereAnd">多查询条件</param>
+		/// 根据多查询条件(SQL AND)检索数据
+		/// </summary>
+		/// <param name="whereAnd">多查询条件</param>
 		/// <param name="orderName">order字段名</param>
 		/// <param name="orderValue">ASC || DESC</param>
-        /// <returns></returns>
+		/// <returns></returns>
 		/// <example>
 		/// List<string> whereAnd = new List<string>();
 		/// whereAnd.Add("RoleID=5");
 		/// whereAnd.Add("IsAdmin=1");
-        /// GetListByWhereAnd(whereAnd, "ID", "DESC");
-        /// </example>
+		/// GetListByWhereAnd(whereAnd, "ID", "DESC");
+		/// </example>
 		public List<ProjectModel> GetListByWhereAnd(IEnumerable<string> whereAnd, string orderName, string orderValue = "ASC")
 		{
 			StringBuilder sql = new StringBuilder("SELECT * FROM [Project] WHERE 1=1");
@@ -674,7 +691,7 @@ namespace IPortfolio.DAL
 				}
 			}
 			sql.Append(string.Format(" ORDER BY {0} {1}", orderName, orderValue));
-			
+
 			List<ProjectModel> result = new List<ProjectModel>();
 			DataSet ds = DbHelperSQL.Query(sql.ToString());
 			if (ds.Tables.Count == 0) return result;
@@ -687,18 +704,18 @@ namespace IPortfolio.DAL
 		}
 
 		/// <summary>
-        /// 根据多查询条件(SQL OR)检索数据
-        /// </summary>
-        /// <param name="whereAnd">多查询条件</param>
+		/// 根据多查询条件(SQL OR)检索数据
+		/// </summary>
+		/// <param name="whereAnd">多查询条件</param>
 		/// <param name="orderName">order字段名</param>
 		/// <param name="orderValue">ASC || DESC</param>
-        /// <returns></returns>
+		/// <returns></returns>
 		/// <example>
 		/// List<string> whereOR = new List<string>();
 		/// whereOR.Add("RoleID IN (1,2,3)");
 		/// whereOR.Add("IsAdmin=1");
-        /// GetListByWhereOr(whereOR, "ID", "DESC");
-        /// </example>
+		/// GetListByWhereOr(whereOR, "ID", "DESC");
+		/// </example>
 		public List<ProjectModel> GetListByWhereOr(IEnumerable<string> whereAnd, string orderName, string orderValue = "ASC")
 		{
 			StringBuilder sql = new StringBuilder("SELECT * FROM [Project] WHERE 1=1");
@@ -710,7 +727,7 @@ namespace IPortfolio.DAL
 				}
 			}
 			sql.Append(string.Format(" ORDER BY {0} {1}", orderName, orderValue));
-			
+
 			List<ProjectModel> result = new List<ProjectModel>();
 			DataSet ds = DbHelperSQL.Query(sql.ToString());
 			if (ds.Tables.Count == 0) return result;
@@ -1155,11 +1172,23 @@ namespace IPortfolio.DAL
 			return DataRowToModel(ds.Tables[0].Rows[0]);
 		}
 
+		public ProjectModel GetModelByDonePercent(int donePercent)
+		{
+			string sql = "SELECT * FROM [Project] WHERE [DonePercent]=@DonePercent";
+			SqlParameter[] parameters = {
+				new SqlParameter("@DonePercent", SqlDbType.Int),
+			};
+			parameters[0].Value = donePercent;
+			DataSet ds = DbHelperSQL.Query(sql, parameters);
+			if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return null;
+			return DataRowToModel(ds.Tables[0].Rows[0]);
+		}
+
 
 
 		public int Insert(ProjectModel model)
 		{
-			string sql = "INSERT INTO [Project]([OrgID],[ProjectName],[Tag],[Description],[CostCenter],[StartDate],[PlanGoLiveDate],[DueDate],[CreatedBy],[CreateTime],[Department],[FunctionGroup],[Workcell],[PM],[SME],[Source],[Quarter],[Type],[Scope],[Sponsor],[IsMajor],[ARSNo],[Status],[Saving],[EstimatedTime],[InternalBudget],[ExternalBudget],[ROI],[Phase],[CloseDate],[ActualTime],[ActualInternalCost],[ActualExternalCost],[ActualSaving]) VALUES(@OrgID,@ProjectName,@Tag,@Description,@CostCenter,@StartDate,@PlanGoLiveDate,@DueDate,@CreatedBy,@CreateTime,@Department,@FunctionGroup,@Workcell,@PM,@SME,@Source,@Quarter,@Type,@Scope,@Sponsor,@IsMajor,@ARSNo,@Status,@Saving,@EstimatedTime,@InternalBudget,@ExternalBudget,@ROI,@Phase,@CloseDate,@ActualTime,@ActualInternalCost,@ActualExternalCost,@ActualSaving)";
+			string sql = "INSERT INTO [Project]([OrgID],[ProjectName],[Tag],[Description],[CostCenter],[StartDate],[PlanGoLiveDate],[DueDate],[CreatedBy],[CreateTime],[Department],[FunctionGroup],[Workcell],[PM],[SME],[Source],[Quarter],[Type],[Scope],[Sponsor],[IsMajor],[ARSNo],[Status],[Saving],[EstimatedTime],[InternalBudget],[ExternalBudget],[ROI],[Phase],[CloseDate],[ActualTime],[ActualInternalCost],[ActualExternalCost],[ActualSaving],[DonePercent]) VALUES(@OrgID,@ProjectName,@Tag,@Description,@CostCenter,@StartDate,@PlanGoLiveDate,@DueDate,@CreatedBy,@CreateTime,@Department,@FunctionGroup,@Workcell,@PM,@SME,@Source,@Quarter,@Type,@Scope,@Sponsor,@IsMajor,@ARSNo,@Status,@Saving,@EstimatedTime,@InternalBudget,@ExternalBudget,@ROI,@Phase,@CloseDate,@ActualTime,@ActualInternalCost,@ActualExternalCost,@ActualSaving,@DonePercent)";
 			SqlParameter[] parameters = {
 				new SqlParameter("@OrgID", SqlDbType.Int),
 				new SqlParameter("@ProjectName", SqlDbType.NVarChar),
@@ -1195,6 +1224,7 @@ namespace IPortfolio.DAL
 				new SqlParameter("@ActualInternalCost", SqlDbType.Decimal),
 				new SqlParameter("@ActualExternalCost", SqlDbType.Decimal),
 				new SqlParameter("@ActualSaving", SqlDbType.Decimal),
+				new SqlParameter("@DonePercent", SqlDbType.Int),
 			};
 			parameters[0].Value = model.OrgID == null ? (object)DBNull.Value : model.OrgID;
 			parameters[1].Value = model.ProjectName == null ? (object)DBNull.Value : model.ProjectName;
@@ -1230,13 +1260,14 @@ namespace IPortfolio.DAL
 			parameters[31].Value = model.ActualInternalCost == null ? (object)DBNull.Value : model.ActualInternalCost;
 			parameters[32].Value = model.ActualExternalCost == null ? (object)DBNull.Value : model.ActualExternalCost;
 			parameters[33].Value = model.ActualSaving == null ? (object)DBNull.Value : model.ActualSaving;
+			parameters[34].Value = model.DonePercent == null ? (object)DBNull.Value : model.DonePercent;
 
 			return DbHelperSQL.ExecuteSql(sql, parameters);
 		}
 
 		public int Update(ProjectModel model)
 		{
-			string sql = "UPDATE [Project] SET [OrgID]=@OrgID,[ProjectName]=@ProjectName,[Tag]=@Tag,[Description]=@Description,[CostCenter]=@CostCenter,[StartDate]=@StartDate,[PlanGoLiveDate]=@PlanGoLiveDate,[DueDate]=@DueDate,[CreatedBy]=@CreatedBy,[CreateTime]=@CreateTime,[Department]=@Department,[FunctionGroup]=@FunctionGroup,[Workcell]=@Workcell,[PM]=@PM,[SME]=@SME,[Source]=@Source,[Quarter]=@Quarter,[Type]=@Type,[Scope]=@Scope,[Sponsor]=@Sponsor,[IsMajor]=@IsMajor,[ARSNo]=@ARSNo,[Status]=@Status,[Saving]=@Saving,[EstimatedTime]=@EstimatedTime,[InternalBudget]=@InternalBudget,[ExternalBudget]=@ExternalBudget,[ROI]=@ROI,[Phase]=@Phase,[CloseDate]=@CloseDate,[ActualTime]=@ActualTime,[ActualInternalCost]=@ActualInternalCost,[ActualExternalCost]=@ActualExternalCost,[ActualSaving]=@ActualSaving WHERE ProjectID=@ProjectID";
+			string sql = "UPDATE [Project] SET [OrgID]=@OrgID,[ProjectName]=@ProjectName,[Tag]=@Tag,[Description]=@Description,[CostCenter]=@CostCenter,[StartDate]=@StartDate,[PlanGoLiveDate]=@PlanGoLiveDate,[DueDate]=@DueDate,[CreatedBy]=@CreatedBy,[CreateTime]=@CreateTime,[Department]=@Department,[FunctionGroup]=@FunctionGroup,[Workcell]=@Workcell,[PM]=@PM,[SME]=@SME,[Source]=@Source,[Quarter]=@Quarter,[Type]=@Type,[Scope]=@Scope,[Sponsor]=@Sponsor,[IsMajor]=@IsMajor,[ARSNo]=@ARSNo,[Status]=@Status,[Saving]=@Saving,[EstimatedTime]=@EstimatedTime,[InternalBudget]=@InternalBudget,[ExternalBudget]=@ExternalBudget,[ROI]=@ROI,[Phase]=@Phase,[CloseDate]=@CloseDate,[ActualTime]=@ActualTime,[ActualInternalCost]=@ActualInternalCost,[ActualExternalCost]=@ActualExternalCost,[ActualSaving]=@ActualSaving,[DonePercent]=@DonePercent WHERE ProjectID=@ProjectID";
 			SqlParameter[] parameters = {
 				new SqlParameter("@ProjectID", SqlDbType.Int),
 				new SqlParameter("@OrgID", SqlDbType.Int),
@@ -1273,6 +1304,7 @@ namespace IPortfolio.DAL
 				new SqlParameter("@ActualInternalCost", SqlDbType.Decimal),
 				new SqlParameter("@ActualExternalCost", SqlDbType.Decimal),
 				new SqlParameter("@ActualSaving", SqlDbType.Decimal),
+				new SqlParameter("@DonePercent", SqlDbType.Int),
 			};
 			parameters[0].Value = model.ProjectID;
 			parameters[1].Value = model.OrgID == null ? (object)DBNull.Value : model.OrgID;
@@ -1309,6 +1341,7 @@ namespace IPortfolio.DAL
 			parameters[32].Value = model.ActualInternalCost == null ? (object)DBNull.Value : model.ActualInternalCost;
 			parameters[33].Value = model.ActualExternalCost == null ? (object)DBNull.Value : model.ActualExternalCost;
 			parameters[34].Value = model.ActualSaving == null ? (object)DBNull.Value : model.ActualSaving;
+			parameters[35].Value = model.DonePercent == null ? (object)DBNull.Value : model.DonePercent;
 
 			return DbHelperSQL.ExecuteSql(sql, parameters);
 		}
@@ -1321,7 +1354,7 @@ namespace IPortfolio.DAL
 			};
 			parameters[0].Value = ProjectID;
 
-            return DbHelperSQL.ExecuteSql(sql, parameters);
+			return DbHelperSQL.ExecuteSql(sql, parameters);
 		}
 
 		public int DeleteByProjectID(int projectID)
@@ -1674,12 +1707,22 @@ namespace IPortfolio.DAL
 			return DbHelperSQL.ExecuteSql(sql, parameters);
 		}
 
+		public int DeleteByDonePercent(int donePercent)
+		{
+			string sql = "DELETE FROM [Project] WHERE [DonePercent]=@DonePercent";
+			SqlParameter[] parameters = {
+				new SqlParameter("@DonePercent", SqlDbType.Int),
+			};
+			parameters[0].Value = donePercent;
+			return DbHelperSQL.ExecuteSql(sql, parameters);
+		}
+
 
 
 		public ProjectModel DataRowToModel(DataRow row)
 		{
 			ProjectModel model = new ProjectModel();
-            if (row == null) return model;
+			if (row == null) return model;
 
 			if (row["ProjectID"] != null && row["ProjectID"].ToString() != "")
 			{
@@ -1821,8 +1864,12 @@ namespace IPortfolio.DAL
 			{
 				model.ActualSaving = decimal.Parse(row["ActualSaving"].ToString());
 			}
+			if (row["DonePercent"] != null && row["DonePercent"].ToString() != "")
+			{
+				model.DonePercent = int.Parse(row["DonePercent"].ToString());
+			}
 
 			return model;
 		}
-    }
+	}
 }

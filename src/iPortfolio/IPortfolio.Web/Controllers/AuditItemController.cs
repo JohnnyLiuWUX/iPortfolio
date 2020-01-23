@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace IPortfolio.Web.Controllers
 {
-    public class AuditItemController : Controller
+    public class AuditItemController : BaseController
     {
         private readonly AuditItemBll auditItemBll = new AuditItemBll();
 

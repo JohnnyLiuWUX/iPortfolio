@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace IPortfolio.Web.Controllers
 {
-    public class NoteController : Controller
+    public class NoteController : BaseController
     {
         private readonly NoteBll noteBll = new NoteBll();
 

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace IPortfolio.Web.Controllers
 {
-    public class SpendingController : Controller
+    public class SpendingController : BaseController
     {
         private readonly SpendingBll spendingBll = new SpendingBll();
 

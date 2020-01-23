@@ -8,8 +8,8 @@ using System.Web.Mvc;
 
 namespace IPortfolio.Web.Controllers
 {
-    public class TaskController : Controller
-    {
+    public class TaskController : BaseController
+	{
         private readonly TaskBll taskBll = new TaskBll();
 
         public ActionResult Index()

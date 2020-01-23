@@ -2,8 +2,8 @@
 
 namespace IPortfolio.Model
 {
-    public class ProjectModel
-    {
+	public class ProjectModel
+	{
 		public int ProjectID { get; set; }
 		public int? OrgID { get; set; }
 		public string ProjectName { get; set; }
@@ -39,5 +39,6 @@ namespace IPortfolio.Model
 		public decimal? ActualInternalCost { get; set; }
 		public decimal? ActualExternalCost { get; set; }
 		public decimal? ActualSaving { get; set; }
-    }
+		public int? DonePercent { get; set; }
+	}
 }

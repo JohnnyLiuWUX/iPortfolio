@@ -5,8 +5,8 @@ using IPortfolio.DAL;
 
 namespace IPortfolio.BLL
 {
-    public partial class ProjectBll
-    {
+	public partial class ProjectBll
+	{
 		private readonly ProjectDal dal = new ProjectDal();
 
 		public List<ProjectModel> GetAll()
@@ -189,54 +189,59 @@ namespace IPortfolio.BLL
 			return dal.GetListByActualSaving(actualSaving);
 		}
 
+		public List<ProjectModel> GetListByDonePercent(int donePercent)
+		{
+			return dal.GetListByDonePercent(donePercent);
+		}
+
 
 
 		/// <summary>
-        /// 根据查询条件(SQL语句)检索数据
-        /// </summary>
-        /// <param name="where">where查询条件</param>
+		/// 根据查询条件(SQL语句)检索数据
+		/// </summary>
+		/// <param name="where">where查询条件</param>
 		/// <param name="orderName">order字段名</param>
 		/// <param name="orderValue">ASC || DESC</param>
-        /// <returns></returns>
+		/// <returns></returns>
 		/// <example>
-        /// GetListByWhere("RoleID=5", "ID", "ASC");
-        /// </example>
+		/// GetListByWhere("RoleID=5", "ID", "ASC");
+		/// </example>
 		public List<ProjectModel> GetListByWhere(string where, string orderName, string orderValue = "ASC")
 		{
 			return dal.GetListByWhere(where, orderName, orderValue);
 		}
 
 		/// <summary>
-        /// 根据多查询条件(SQL AND)检索数据
-        /// </summary>
-        /// <param name="whereAnd">多查询条件</param>
+		/// 根据多查询条件(SQL AND)检索数据
+		/// </summary>
+		/// <param name="whereAnd">多查询条件</param>
 		/// <param name="orderName">order字段名</param>
 		/// <param name="orderValue">ASC || DESC</param>
-        /// <returns></returns>
+		/// <returns></returns>
 		/// <example>
 		/// List<string> whereAnd = new List<string>();
 		/// whereAnd.Add("RoleID=5");
 		/// whereAnd.Add("IsAdmin=1");
-        /// GetListByWhereAnd(whereAnd, "ID", "DESC");
-        /// </example>
+		/// GetListByWhereAnd(whereAnd, "ID", "DESC");
+		/// </example>
 		public List<ProjectModel> GetListByWhereAnd(IEnumerable<string> whereAnd, string orderName, string orderValue)
 		{
 			return dal.GetListByWhereAnd(whereAnd, orderName, orderValue);
 		}
 
 		/// <summary>
-        /// 根据多查询条件(SQL OR)检索数据
-        /// </summary>
-        /// <param name="whereAnd">多查询条件</param>
+		/// 根据多查询条件(SQL OR)检索数据
+		/// </summary>
+		/// <param name="whereAnd">多查询条件</param>
 		/// <param name="orderName">order字段名</param>
 		/// <param name="orderValue">ASC || DESC</param>
-        /// <returns></returns>
+		/// <returns></returns>
 		/// <example>
 		/// List<string> whereOR = new List<string>();
 		/// whereOR.Add("RoleID IN (1,2,3)");
 		/// whereOR.Add("IsAdmin=1");
-        /// GetListByWhereOr(whereOR, "ID", "DESC");
-        /// </example>
+		/// GetListByWhereOr(whereOR, "ID", "DESC");
+		/// </example>
 		public List<ProjectModel> GetListByWhereOr(IEnumerable<string> whereAnd, string orderName, string orderValue)
 		{
 			return dal.GetListByWhereOr(whereAnd, orderName, orderValue);
@@ -420,6 +425,11 @@ namespace IPortfolio.BLL
 		public ProjectModel GetModelByActualSaving(decimal actualSaving)
 		{
 			return dal.GetModelByActualSaving(actualSaving);
+		}
+
+		public ProjectModel GetModelByDonePercent(int donePercent)
+		{
+			return dal.GetModelByDonePercent(donePercent);
 		}
 
 
@@ -614,6 +624,11 @@ namespace IPortfolio.BLL
 			return dal.DeleteByActualSaving(actualSaving);
 		}
 
+		public int DeleteByDonePercent(int donePercent)
+		{
+			return dal.DeleteByDonePercent(donePercent);
+		}
 
-    }
+
+	}
 }

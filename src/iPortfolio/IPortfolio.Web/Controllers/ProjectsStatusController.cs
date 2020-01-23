@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace IPortfolio.Web.Controllers
 {
-    public class ProjectsStatusController : Controller
+    public class ProjectsStatusController : BaseController
     {
         private readonly ProjectsStatusBll projectsStatusBll = new ProjectsStatusBll();
 

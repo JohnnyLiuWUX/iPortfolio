@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "My Project";
+    List<IPortfolio.Model.ProjectModel> modelList = (List<IPortfolio.Model.ProjectModel>)ViewBag.ProjectList;
+}
+
+<ol class="breadcrumb mtFixed">
+    <li><a>Project</a></li>
+    <li><a href="@Url.Action("MyProject","Project")">My Project</a></li>
+</ol>
+
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="pull-left">
+                <span class="glyphicon glyphicon-list"></span>
+                <span>My Project</span>
+            </div>
+
+            <div class="pull-right">
+                <a href="@Url.Action("Add", "Project")" class="btn btn-sm btn-success">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span>New Project</span>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="panel-body" style="overflow-y: scroll;">
+            <table id="table1" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>ProjectName</th>
+                        <th>StartDate</th>
+                        <th>DueDate</th>
+                        <th>Phase</th>
+                        <th>Plan %</th>
+                        <th>Complete %</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in modelList)
+                    {
+                        <tr>
+                            <td>@item.ProjectID</td>
+                            <td>@item.ProjectName</td>
+                            <td>@item.StartDate</td>
+                            <td>@item.DueDate</td>
+                            <td>@item.Phase</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                <a href="@Url.Action("Modify","Project", new { projectID = @item.ProjectID })" class="text-warning" title="Modify">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>&nbsp;
+                                <a href="javascript:void(0)" onclick="DeleteConfirmYes('@Url.Action("Delete","Project", new { projectID = @item.ProjectID })')" class="text-danger" title="Delete">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+    <!-- DataTables -->
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/dataTables.bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('#table1').DataTable();
+    });
+    </script>
+
+}
+
+

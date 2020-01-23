@@ -18,19 +18,21 @@
         </div>
         <div class="panel-body">
             <form id="form1">
-				<input type="hidden" name="OrgID" value="@item.OrgID">
+                <div class="form-group">
+                    <label>OrgID <span class="label label-danger">*</span></label>
+                    <input type="text" class="form-control" name="OrgID" placeholder="Please input OrgID" value="@item.OrgID">
+                </div>
+                <div class="form-group">
+                    <label>Organization <span class="label label-danger">*</span></label>
+                    <input type="text" class="form-control" name="Organization" placeholder="Please input Organization" value="@item.Organization">
+                </div>
 
-				<div class="form-group">
-					<label>Organization</label>
-					<input type="text" class="form-control" name="Organization" placeholder="Please input Organization" value="@item.Organization">
-				</div>
-
-				<a href="@Url.Action("Modify", "Organization", new { orgID = @item.OrgID })" class="btn btn-default">
+                <a href="@Url.Action("Modify", "Organization", new { orgID = @item.OrgID })" class="btn btn-default">
                     <span class="glyphicon glyphicon-refresh"></span>
                     <span>Refresh</span>
                 </a>
                 <button type="button" class="btn btn-primary" onclick="SubmitFormAsync('@Url.Action("Update", "Organization")', 'form1')">Submit</button>
-				<a href="@Url.Action("Index", "Organization")" class="btn btn-default">
+                <a href="@Url.Action("Index", "Organization")" class="btn btn-default">
                     <span class="glyphicon glyphicon-share"></span>
                     <span>Back</span>
                 </a>

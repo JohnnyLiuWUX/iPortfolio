@@ -8,9 +8,10 @@ using System.Web.Mvc;
 
 namespace IPortfolio.Web.Controllers
 {
-    public class ProjectController : Controller
-    {
+    public class ProjectController : BaseController
+	{
         private readonly ProjectBll projectBll = new ProjectBll();
+		private readonly ProjectPropertyBll projectPropertyBll = new ProjectPropertyBll();
 
         public ActionResult Index()
         {
@@ -18,9 +19,16 @@ namespace IPortfolio.Web.Controllers
             return View();
         }
 
+		public ActionResult MyProject()
+		{
+			ViewBag.ProjectList = projectBll.GetAll();
+			return View();
+		}
+
         public ActionResult Add()
         {
-            return View();
+			ViewBag.ProjectPropertyList = projectPropertyBll.GetAll();
+			return View();
         }
 
 		[HttpPost]

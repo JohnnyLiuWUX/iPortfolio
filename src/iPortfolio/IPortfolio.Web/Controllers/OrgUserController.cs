@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace IPortfolio.Web.Controllers
 {
-    public class OrgUserController : Controller
+    public class OrgUserController : BaseController
     {
         private readonly OrgUserBll orgUserBll = new OrgUserBll();
 

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace IPortfolio.Web.Controllers
 {
-    public class ProjectPropertyController : Controller
+    public class ProjectPropertyController : BaseController
     {
         private readonly ProjectPropertyBll projectPropertyBll = new ProjectPropertyBll();
 

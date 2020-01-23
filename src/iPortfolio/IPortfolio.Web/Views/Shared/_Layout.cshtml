@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    List<IPortfolio.Model.OrganizationModel> orgList = ViewBag.OrgList;
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -7,7 +10,8 @@
     <link rel="stylesheet" href="~/Content/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/Content/dataTables.bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/site.css" />
-    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Scripts/common.js"></script>
 </head>
@@ -72,25 +76,31 @@
                 <!-- ./ main menu -->
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a>WUX IT</a></li>
+                    <li><a><span class="label label-primary"><span class="glyphicon glyphicon-leaf"></span> Current Org</span></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Organization <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">WUX IT</a></li>
-                            <li><a href="#">WUH IT</a></li>
+                            @if (orgList != null)
+                            {
+                                foreach (var item in orgList)
+                                {
+                                    <li><a href="@Url.Action("Current", "Organization", new { orgID = item.OrgID })">@item.Organization</a></li>
+                                }
+                            }
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">All Organization</a></li>
+                            <li><a href="@Url.Action("Index", "Organization")">All Organization</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LoginName <span class="caret"></span></a>
+                    <li><a><span class="glyphicon glyphicon-user"></span> @Context.User.Identity.Name</a></li>
+                    @*<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Context.User.Identity.Name <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Profile</a></li>
                             <li><a href="#">Edit Password</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Exit</a></li>
                         </ul>
-                    </li>
+                    </li>*@
                 </ul>
                 <!-- ./right -->
             </div>
@@ -100,7 +110,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - IPortfolio Application</p>
         </footer>
     </div>
     @RenderSection("scripts", required: false)
